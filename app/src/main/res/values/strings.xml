@@ -1,0 +1,123 @@
+<resources>
+    <string name="app_name">ForeignFriend</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="facebook_app_id">1816308978618100</string>
+
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <string name="pref_header_general">General</string>
+    <string name="pref_header_help">About &amp; Help</string>
+
+    <string name="pref_title_display_name">Description</string>
+    <string name="pref_default_display_name">Edit the description</string>
+    <string-array name="pref_language_titles">
+        <item>English</item>
+        <item>French</item>
+        <item>Spanish</item>
+        <item>Swedish</item>
+    </string-array>
+    <string-array name="pref_language_values">
+        <item>en</item>
+        <item>fr</item>
+        <item>sp</item>
+        <item>sw</item>
+    </string-array>
+    <string-array name="pref_themes_titles">
+        <item>Default</item>
+    </string-array>
+    <string-array name="pref_themes_values">
+        <item>df</item>
+    </string-array>
+
+    <string name="pref_header_about_help">About &amp; Help</string>
+    <string name="pref_header_themes">Themes</string>
+    <string name="pref_header_language">Language</string>
+
+
+    <string name="delete_account_title">Delete Account</string>
+    <string name="delete_account_ok">Yes</string>
+    <string name="delete_account_no">No</string>
+    <string name="delete_account_message">Delete the account</string>
+
+    <!-- strings related to the student online profile -->
+    <string name="student_online_name">Juan Luis</string>
+    <string name="email_subject">Mail from ForeignFriend</string>
+
+
+
+
+
+
+
+
+    <string name="title_activity_maps">Map</string>
+
+    <string name="label_google_sign_in">Firebase + Google Sign In</string>
+    <string name="desc_google_sign_in">Use a Google Sign In credential to authenticate with Firebase.</string>
+
+    <string name="label_facebook_login">Firebase + Facebook Login</string>
+    <string name="desc_facebook_login">Use a Facebook Login credential to authenticate with Firebase.</string>
+
+    <string name="label_twitter_login">Firebase + Twitter Login</string>
+    <string name="desc_twitter_login">Use a Twitter Login credential to authenticate with Firebase.</string>
+
+    <string name="label_emailpassword">Email/Password Authentication</string>
+    <string name="desc_emailpassword">Use an email and password to authenticate with Firebase.</string>
+
+    <string name="label_anonymous_auth">Anonymous Authentication</string>
+    <string name="desc_anonymous_auth">Sign in anonymously and then later upgrade to a full Firebase Auth user.</string>
+
+    <string name="label_custom_auth">Custom Authentication</string>
+    <string name="desc_custom_auth">Use a custom token signed by your own server to authenticate with Firebase.</string>
+
+    <string name="label_firebase_ui">FirebaseUI Auth</string>
+    <string name="desc_firebase_ui">Use the FirebaseUI-Android library to authenticate with Firebase.</string>
+
+    <string name="hint_user_id">User ID</string>
+
+
+    <string name="firebaseui_status_fmt">Firebase User: %s</string>
+    <string name="firebaseui_title_text">FirebaseUI Auth</string>
+
+    <string name="id_fmt">User ID: %s</string>
+    <string name="email_fmt">Email: %s</string>
+    <string name="Home">Home</string>
+    <string name="map">Map</string>
+    <string name="profile">profile</string>
+
+
+
+    <!-- Strings for the filterActivity-->
+
+    <string-array name ="courses">
+        <item>ID2216</item>
+        <item>IS1200</item>
+        <item>HE1208</item>
+        <item>SK1101</item>
+        <item>AD001</item>
+        <item>AC0002</item>
+    </string-array>
+
+    <string-array name="fields">
+        <item>Math</item>
+        <item>Physics</item>
+        <item>Chemistry</item>
+        <item>Business</item>
+        <item>IT</item>
+    </string-array>
+</resources>

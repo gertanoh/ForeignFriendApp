@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:design="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="10">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9">
+
+            <ImageView
+                    android:id="@+id/header_cover_image_online"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/online_bg"
+                    />
+
+            <ImageView
+                    android:id="@+id/user_online_picture"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/profile_circular_border_image"
+                    android:elevation="5dp"
+                    android:padding="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/online_picture_profile"
+                    android:layout_above="@+id/user_profile_name"
+                    android:layout_alignStart="@+id/user_profile_name" />
+
+            <TextView
+                android:id="@+id/user_profile_name"
+                android:layout_below="@+id/header_cover_image_online"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="@string/student_online_name"
+                android:textColor="#928aff"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_profile_name"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/mail_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="30dp"
+                    android:background="#c2ff9c"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:padding="20dp"
+                    android:text="Mail"
+                    android:onClick="mailHandle"
+                    android:layout_weight="1"
+                    />
+
+
+                <TextView
+                    android:id="@+id/whatsapp_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginLeft="40dp"
+                    android:background="#c2ff9c"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:padding="20dp"
+                    android:text="Whatsapp"
+                    android:onClick="whatsappHandle"
+                    android:layout_weight="1"
+                    />
+
+                <TextView
+                    android:id="@+id/messenger_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="5dp"
+                    android:background="#c2ff9c"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:padding="20dp"
+                    android:text="Messenger"
+                    android:onClick="messengerHandle"
+                    android:layout_weight="1"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            design:menu="@menu/menu_navigation"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

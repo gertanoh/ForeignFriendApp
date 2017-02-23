@@ -1,0 +1,17 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:id="@+id/general_des"
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_display_name"
+
+        android:inputType="textCapWords"
+        android:key="example_text"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:onClick="updateName"
+        android:title="@string/pref_title_display_name" />
+
+
+</PreferenceScreen>

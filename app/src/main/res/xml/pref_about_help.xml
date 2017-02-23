@@ -1,0 +1,32 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+   <!-- <ListPreference
+        android:key="about_help"/>-->
+
+    <Preference android:title="FAQ"
+        android:key="about_help">
+        <intent android:action="android.intent.action.VIEW"
+            android:data="http://www.wikihow.com/Main-Page"
+            />
+
+    </Preference>
+
+    <Preference android:title="Contact us">
+        <intent android:action="android.intent.action.VIEW"
+        android:data="http://www.wikihow.com/Main-Page"
+            />
+    </Preference>
+
+    <Preference android:title="Terms and Privacy Policy">
+        <intent android:action="android.intent.action.VIEW"
+            android:data="http://www.wikihow.com/Main-Page"
+            />
+    </Preference>
+
+    <Preference android:title="About">
+        <intent android:action="android.intent.action.VIEW"
+            android:data="http://www.wikihow.com/Main-Page"
+            />
+    </Preference>
+</PreferenceScreen>

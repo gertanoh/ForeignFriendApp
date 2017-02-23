@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "961356744183",
+    "firebase_url": "https://foreignfriend-24a94.firebaseio.com",
+    "project_id": "foreignfriend-24a94",
+    "storage_bucket": "foreignfriend-24a94.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961356744183:android:dbd5e83eb417e1a5",
+        "android_client_info": {
+          "package_name": "com.group11.kth.foreignfriend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961356744183-i1h8omck48e7dd8s8j99lkufluebqj5f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.group11.kth.foreignfriend",
+            "certificate_hash": "D331A94DB48F5CAB6AEA643D2D770B6E03018BAB"
+          }
+        },
+        {
+          "client_id": "961356744183-rjkabvnlbrrh71s3rov9nlmn1o1m54k7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.group11.kth.foreignfriend",
+            "certificate_hash": "0C3A587981B1B167185D4CB63CF51C641C320954"
+          }
+        },
+        {
+          "client_id": "961356744183-tg2vcnq3qh41cjmu31v3ff163dcqv4lq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoko1pTC8fBTJnm4d4LNVw7sji1xRJCgY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961356744183-tg2vcnq3qh41cjmu31v3ff163dcqv4lq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

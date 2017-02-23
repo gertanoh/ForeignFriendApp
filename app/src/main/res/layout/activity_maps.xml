@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:design="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/activity_main"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+ <!--................... HEADER...................... -->
+
+ <!-- .................HEADER END........................ -->
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:layout_alignParentTop="true"
+     android:layout_alignParentStart="true"
+     android:orientation="vertical">
+
+  <RelativeLayout
+      android:id="@+id/header"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_alignParentTop="true"
+      android:background="#ffffff"
+      android:gravity="center"
+      android:layout_weight="1">
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_margin="5dp"
+       android:text=""
+       android:textColor="#000000"
+       android:textSize="30sp" />
+
+   <Switch
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/filterswitch"
+       android:text="  FILTERS "
+       android:textStyle="normal|bold"
+       android:layout_alignBaseline="@+id/filter"
+       android:layout_alignBottom="@+id/filter"
+        />
+
+   <Button
+       android:text="Filter"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/filter"
+       style="@android:style/Widget.DeviceDefault.Button.Small"
+       android:textSize="12sp"
+       android:layout_marginEnd="11dp"
+       android:layout_alignParentTop="true"
+       android:layout_alignParentEnd="true" />
+
+  </RelativeLayout>
+
+
+   <fragment
+       android:id="@+id/map"
+
+       android:name="com.google.android.gms.maps.SupportMapFragment"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="9"
+       android:layout_gravity="top"
+       tools:context="com.group11.kth.foreignfriend.MapsActivity" />
+
+
+
+
+  <android.support.design.widget.BottomNavigationView
+       android:id="@+id/bottomNavigationView"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="1"
+       design:menu="@menu/menu_navigation" />
+
+  </LinearLayout>
+
+
+</RelativeLayout>
