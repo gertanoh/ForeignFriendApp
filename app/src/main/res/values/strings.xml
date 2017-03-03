@@ -59,6 +59,13 @@
     <string name="email_subject">Mail from ForeignFriend</string>
 
 
+    <!-- strings related to login -->
+    <string name="bar_message">Connecting</string>
+    <string name="user_log_status_file">log_status_preference_file</string>
+    <string name="user_log_status">log_status</string>
+    <string name="app_encourage_log_in">Connect with Students \n \u0020
+        to study and have a\n \u0020 \u0020 \u0020   great time.</string>
+    <string name="user_fb_id"></string>
 
 
 
@@ -120,4 +127,11 @@
         <item>Business</item>
         <item>IT</item>
     </string-array>
+
+
+    <!-- strings related to contacts -->
+    <string name="user_name">name</string>
+    <string name="user_email">email</string>
+    <string name="user_id">id</string>
+    <string name="user_first_time">first_time</string>
 </resources>

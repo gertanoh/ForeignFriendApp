@@ -1,12 +1,18 @@
 package com.group11.kth.foreignfriend;
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 // Axel Hult 2017-02-14:
@@ -27,12 +33,19 @@ public class FilterActivity extends AppCompatActivity {
     String[]fieldsarray;
     boolean[] checkedfields;
     ArrayList<Integer>fieldslist = new ArrayList<>();
-
+    public SharedPreferences sharedPref;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        sharedPref = this.getSharedPreferences(getString(R.string.user_log_status_file), Context.MODE_PRIVATE);
+
+        String id = sharedPref.getString(getString(R.string.user_id), "123455");
+        final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+
+        rootRef.child("Users").child(id).child("Add a field").setValue("I don't study MAth");
         setContentView(R.layout.activity_filter);
 
         fields = (Button) findViewById(R.id.fieldbtn);

@@ -1,24 +1,25 @@
 package com.group11.kth.foreignfriend;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
+import android.content.SharedPreferences;
+import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.FileNotFoundException;
+import com.facebook.login.LoginManager;
+import com.google.firebase.auth.FirebaseAuth;
+
 
 
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener
@@ -27,30 +28,25 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
     // variables
     public static final int REQUEST_IMAGE_PICTURE = 1;
-   // private EditText
+    public SharedPreferences sharedPref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        sharedPref = this.getSharedPreferences(getString(R.string.user_log_status_file), Context.MODE_PRIVATE);
         setContentView(R.layout.activity_profile);
-
-        String name = LoginActivity.user.getDisplayName();
-        TextView t = (TextView)findViewById(R.id.user_profile_name);
-        t.setText(name);
-
-       /* Uri picture = LoginActivity.user.getPhotoUrl();
-        ImageView v = (ImageView) findViewById(R.id.user_profile_picture);
-        v.setImageURI(null);
-        v.setImageURI(picture);*/
+        String name = sharedPref.getString(getString(R.string.user_name),"henry");
         // clikcable text
         findViewById(R.id.settings_id).setOnClickListener(this);
         findViewById(R.id.contact_id).setOnClickListener(this);
         findViewById(R.id.delete_account_id).setOnClickListener(this);
         findViewById(R.id.sign_out_id).setOnClickListener(this);
         findViewById(R.id.editPicButton).setOnClickListener(this);
-        TextView v = (TextView) findViewById(R.id.user_bio);
-        TextView v1 = (TextView) findViewById(R.id.general_des);
-        //v1.addTextChangedListener(TextWatcher);
-        //v.setText(v1.getText());
+        TextView v = (TextView) findViewById(R.id.user_profile_name);
+        v.setText(name);
+        ImageView image = (ImageView) findViewById(R.id.user_profile_picture);
+        /* load image */
+        Utils.loadImage(image, LoginActivity.id, getApplicationContext());
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.bottomNavigationView);
 
@@ -107,21 +103,19 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         showDialog();
     }
 
-  /*  private void signOutHandle(){
+    private void signOutHandle(){
         // Firebase sign out
-        LoginActivity.mAuth.signOut();
+        FirebaseAuth.getInstance().signOut();
+        LoginManager.getInstance().logOut();
+        sharedPref  = this.getSharedPreferences(getString(R.string.user_log_status_file), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(getString(R.string.user_log_status),0);
+        editor.commit();
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(intent);
 
-        // Google sign out
-        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
-                new ResultCallback<Status>() {
-                    @Override
-                    public void onResult(@NonNull Status status) {
-                        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                        startActivity(intent);
-                    }
-                });
-    }*/
+    }
 
     @Override
     public void onClick(View view) {
@@ -137,7 +131,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             deleteAccountHandle();
         }
         else if (i == R.id.sign_out_id){
-           // signOutHandle();
+           signOutHandle();
         }
         else if (i == R.id.editPicButton){
             changeBackgroundPicture();

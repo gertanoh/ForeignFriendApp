@@ -2,23 +2,37 @@ package com.group11.kth.foreignfriend;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
+import android.os.AsyncTask;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.facebook.AccessToken;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.HttpMethod;
+import com.facebook.internal.LoginAuthorizationType;
+import com.facebook.internal.Utility;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
+import com.google.android.gms.cast.Cast;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.games.multiplayer.turnbased.TurnBasedMultiplayer;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -27,8 +41,25 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageMetadata;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import android.Manifest;
+
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener,
         GoogleMap.OnMarkerClickListener {
@@ -44,6 +75,68 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private LocationManager locationManager;
     private static final long MIN_TIME = 400;
     private static final float MIN_DISTANCE = 1000;
+
+    public static FirebaseStorage storage = FirebaseStorage.getInstance();
+    StorageReference storageRef = storage.getReference();
+
+
+
+    private class DownloadProfilePicture extends AsyncTask<Void, Void, Integer> {
+        Bitmap profilePicture;
+
+        @Override
+        protected Integer doInBackground(Void... params) {
+            final Integer res = 0;
+
+            Bundle parameters = new Bundle();
+            parameters.putString("fields","picture.type(small)");
+
+            URL picUrl;
+            try {
+
+                Thread.sleep(500);
+                picUrl = new URL(LoginActivity.pictureUrl);
+                String refName = "images/user_profile_"+LoginActivity.id+".jpg";
+                StorageReference imagesRef = storageRef.child(refName);
+                HttpURLConnection connection = (HttpURLConnection)picUrl.openConnection();
+                connection.setDoInput(true);
+                connection.connect();
+                InputStream in = connection.getInputStream();
+                UploadTask uploadTask = imagesRef.putStream(in);
+
+                uploadTask.addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getApplicationContext(),"Async Task Download failed", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                    }
+                });
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+            catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+
+            return res;
+        }
+
+        protected void onPostExecute(){
+
+        }
+
+    };
+
 
 
     @Override
@@ -82,6 +175,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 return false;
             }
         });
+
+
+        if(!(LoginActivity.connect_value == 1)){
+            new DownloadProfilePicture().execute();
+        }
     }
 
 
@@ -217,6 +315,40 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Intent intent = new Intent(this, StudentOnlineActivity.class);
         startActivity(intent);
         return false;
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+
+        if(storageRef != null){
+            outState.putString("reference",storageRef.toString());
+        }
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+
+        // If there was an upload in progress, gets its reference and create a storage reference */
+        final String stringRef = savedInstanceState.getString("reference");
+        if(stringRef != null){
+            return;
+        }
+
+        storageRef = FirebaseStorage.getInstance().getReferenceFromUrl(stringRef);
+        // Find all Upload tasks under this reference
+        List tasks = storageRef.getActiveUploadTasks();
+        if(tasks.size() > 0 ){
+            // Get the monitoring task upload
+            UploadTask task = (UploadTask)tasks.get(0);
+            // Add new listener to the task using the activity scope
+            task.addOnSuccessListener(this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    // function, to handle the event
+                }
+            });
+        }
     }
 
 }

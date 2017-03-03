@@ -1,84 +1,179 @@
 package com.group11.kth.foreignfriend;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
+import android.widget.ImageView;
 import android.widget.Toast;
-
 import com.facebook.*;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.signin.GoogleSignInResult;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.gms.vision.text.Text;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener,
- View.OnClickListener{
+import org.json.JSONException;
+import org.json.JSONObject;
+
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Arrays;
+
+
+public class LoginActivity extends AppCompatActivity {
 
     private LoginButton loginButton;
     private CallbackManager callbackManager;
     public  FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    public ProgressDialog bar;
+    public static String id;
+    public static String name;
+    public static String email;
 
     private static final String TAG = "LoginActivity";
-    private static final int RC_SIGN_IN = 9001;
-
-    private GoogleApiClient mGoogleApiClient;
+    public SharedPreferences sharedPref;
+    public SharedPreferences.Editor editor;
     public static FirebaseUser user;
+
+    public AccessTokenTracker tracker;
+    public ProfileTracker profileTracker;
+
+    public static String pictureUrl;
+    public AccessToken accessToken;
+    public Profile profile;
+
+    public static int first_time_user_connect ;
+
+    public static int connect_value = -1 ;
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+
+        /* get status */
+        sharedPref  = this.getSharedPreferences(getString(R.string.user_log_status_file), Context.MODE_PRIVATE);
+
+        connect_value = sharedPref.getInt(getString(R.string.user_log_status), -1);
+        if(connect_value == 1)
+        {
+            openMapActivity();
+
+        }
         setContentView(R.layout.activity_login);
 
 
-        // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
-
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                user = firebaseAuth.getCurrentUser();
+                FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
-                    // goMainScreen();
+                    // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
-
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
                 }
-                // ...
             }
         };
-
+        //Get the connectivity
+        ConnectivityManager con = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo nt = con.getActiveNetworkInfo();
+        if(nt == null || !nt.isConnected()){
+            Toast.makeText(this,"You need Internet Connection",Toast.LENGTH_SHORT).show();
+        }
 
         callbackManager = CallbackManager.Factory.create();
+        tracker = new AccessTokenTracker() {
+            @Override
+            protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
+                    accessToken = currentAccessToken;
+            }
+        };
+        accessToken = AccessToken.getCurrentAccessToken();
+        tracker.startTracking();
+        profileTracker = new ProfileTracker() {
+            @Override
+            protected void onCurrentProfileChanged(Profile oldProfile, Profile currentProfile) {
+                    // change profile picture
+            }
+        };
+        profileTracker.startTracking();
         loginButton = (LoginButton) findViewById(R.id.button_facebook_login);
-        loginButton.setReadPermissions("email", "public_profile");
+        loginButton.setReadPermissions(Arrays.asList("email", "public_profile"));
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 Log.d(TAG, "facebook:onSuccess:" + loginResult);
                 handleFacebookAccessToken(loginResult.getAccessToken());
+                /* retrieve user info */
+                editor = sharedPref.edit();
+                GraphRequest request = GraphRequest.newMeRequest(loginResult.getAccessToken(),
+                        new GraphRequest.GraphJSONObjectCallback() {
+                    @Override
+                    public void onCompleted(JSONObject object, GraphResponse response) {
+                        try {
+                            JSONObject data = response.getJSONObject();
+                            id = object.getString("id");
+                            name = object.getString("name");
+                            email = object.getString("email");
+                            pictureUrl = data.getJSONObject("picture").getJSONObject("data").getString("url");
+                            editor.putString(getString(R.string.user_id),id);
+                            // write id to real time database
+                            editor.putString(getString(R.string.user_name),name);
+                            editor.putString(getString(R.string.user_email),email);
+                            editor.commit();
+                           // rootRef.child("Users").child(id).child("Mail").setValue(email);
+                           // rootRef.child("Users").child(id).child("Name").setValue(name);
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                });
+                Bundle parameters = new Bundle();
+             //   if(first_time_user_connect == 1){
+                    parameters.putString("fields","id,name,email,picture.type(normall)");
+               // }
+               /* else {
+                     parameters.putString("fields","id,name,email");
+                }*/
+
+                request.setParameters(parameters);
+                request.executeAsync();
+
+                editor.putInt(getString(R.string.user_log_status),1);
+                editor.commit();
                 openMapActivity();
+
+
             }
 
             @Override
@@ -92,39 +187,12 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 Log.d(TAG, "facebook:onError", error);
                 // ...
             }
+
+            /* async task to download profile picture */
+
         });
 
 
-        /* Google sign */
-        // [START config_signin]
-        // Configure Google Sign In
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
-        // [END config_signin]
-
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
-                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
-                .build();
-
-        findViewById(R.id.sign_google_id).setOnClickListener((View.OnClickListener) this);
-
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (mAuthListener != null) {
-            mAuth.removeAuthStateListener(mAuthListener);
-        }
     }
 
     // [START onactivityresult]
@@ -132,48 +200,11 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
-        if (requestCode == RC_SIGN_IN) {
-            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-            if (result.isSuccess()) {
-                // Google Sign In was successful, authenticate with Firebase
-                GoogleSignInAccount account = result.getSignInAccount();
-                firebaseAuthWithGoogle(account);
-            } else {
-                Toast.makeText(this, "Google sign in failed", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
+        // it is facebbok login
+        // pass the value to the call back
+        callbackManager.onActivityResult(requestCode, resultCode, data);
 
-    private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
-        Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
 
-        AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
-        mAuth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d(TAG, "signInWithCredential:onComplete:" + task.isSuccessful());
-
-                        // If sign in fails, display a message to the user. If sign in succeeds
-                        // the auth state listener will be notified and logic to handle the
-                        // signed in user can be handled in the listener.
-                        if (!task.isSuccessful()) {
-                            Log.w(TAG, "signInWithCredential", task.getException());
-                            Toast.makeText(getApplicationContext(), "Authentication failed with google sign in.",
-                                    Toast.LENGTH_SHORT).show();
-                        }
-                        else {
-                            openMapActivity();
-                        }
-
-                    }
-                });
-    }
-
-    private void signIn() {
-        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
-        startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
 
@@ -194,49 +225,40 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                     Toast.makeText(LoginActivity.this, "Authentication failed badly.",
                             Toast.LENGTH_SHORT).show();
                 }
-                else{
-                    Toast.makeText(LoginActivity.this, "successful", Toast.LENGTH_SHORT).show();
+                hideProgressDialog();
 
-                }
+
 
             }
         });
     }
     public void openMapActivity(){
+
+
         Intent intent = new Intent(LoginActivity.this, MapsActivity.class);
         startActivity(intent);
     }
 
-    @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        // An unresolvable error has occurred and Google APIs (including Sign-In) will not
-        // be available.
-        Log.d(TAG, "onConnectionFailed:" + connectionResult);
-        Toast.makeText(this, "Google Play Services error.", Toast.LENGTH_SHORT).show();
-    }
 
-    @Override
-    public void onClick(View v) {
-        int i = v.getId();
-        if(i == R.id.sign_google_id){
-            signIn();
+    public void showProgressDialog() {
+        if (bar == null) {
+            bar = new ProgressDialog(this);
+            bar.setMessage(getString(R.string.bar_message));
+            bar.setIndeterminate(true);
+        }
+
+        bar.show();
+    }
+    public void hideProgressDialog() {
+        if (bar != null && bar.isShowing()) {
+            bar.dismiss();
         }
     }
 
-/*
-    public void signOut(){
-        // Firebase sign out
-        mAuth.signOut();
-
-        // Google sign out
-        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
-                new ResultCallback<Status>() {
-                    @Override
-                    public void onResult(@NonNull Status status) {
-                        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                        startActivity(intent);
-                    }
-                });
-    }*/
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        tracker.stopTracking();
+        profileTracker.stopTracking();
+    }
 }
