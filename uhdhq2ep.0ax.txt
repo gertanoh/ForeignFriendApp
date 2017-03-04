@@ -1,0 +1,46 @@
+﻿Merge branch 'master' of https://github.com/thenryci1996/ForeignFriendAppNewVersion
+
+# Conflicts:
+#	app/src/main/java/com/group11/kth/foreignfriend/MapsActivity.java
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 2 and 2 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	deleted:    .idea/libraries/facebook_android_sdk_4_19_0.xml
+#	deleted:    .idea/libraries/firebase_ui_storage_0_6_0.xml
+#	deleted:    .idea/libraries/glide_3_7_0.xml
+#	modified:   .idea/workspace.xml
+#	modified:   app/build.gradle
+#	modified:   app/src/main/AndroidManifest.xml
+#	modified:   app/src/main/java/com/group11/kth/foreignfriend/MapsActivity.java
+#	new file:   app/src/main/res/old_code.java
+#
+# Changes not staged for commit:
+#	modified:   .gradle/2.14.1/taskArtifacts/cache.properties.lock
+#	modified:   .gradle/2.14.1/taskArtifacts/fileHashes.bin
+#	modified:   .gradle/2.14.1/taskArtifacts/fileSnapshots.bin
+#	modified:   .gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin
+#	modified:   .gradle/2.14.1/taskArtifacts/taskArtifacts.bin
+#	modified:   .idea/misc.xml
+#	modified:   .idea/workspace.xml
+#	modified:   app/app.iml
+#
+# Untracked files:
+#	.idea/inspectionProfiles/
+#	.idea/libraries/gson_2_7.xml
+#	.idea/vcs.xml
+#
+

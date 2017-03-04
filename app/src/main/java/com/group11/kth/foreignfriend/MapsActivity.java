@@ -126,7 +126,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             final Integer res = 0;
 
             Bundle parameters = new Bundle();
-            parameters.putString("fields","picture.type(small)");
 
             URL picUrl;
             try {
