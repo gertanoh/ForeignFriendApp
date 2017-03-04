@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
-
+import com.squareup.picasso.Picasso;
 
 
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener
@@ -35,7 +35,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
         sharedPref = this.getSharedPreferences(getString(R.string.user_log_status_file), Context.MODE_PRIVATE);
         setContentView(R.layout.activity_profile);
-        String name = sharedPref.getString(getString(R.string.user_name),"henry");
+        String name = sharedPref.getString(getString(R.string.user_name),"Name");
+        String pictureUrl = sharedPref.getString(getString(R.string.user_profile_picture_url),"null");
         // clikcable text
         findViewById(R.id.settings_id).setOnClickListener(this);
         findViewById(R.id.contact_id).setOnClickListener(this);
@@ -46,7 +47,10 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         v.setText(name);
         ImageView image = (ImageView) findViewById(R.id.user_profile_picture);
         /* load image */
-        Utils.loadImage(image, LoginActivity.id, getApplicationContext());
+        Picasso.with(this)
+                .load(pictureUrl)
+                .error(R.drawable.profile_barack)
+                .into(image);
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.bottomNavigationView);
 

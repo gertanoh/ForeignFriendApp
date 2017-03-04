@@ -8,6 +8,8 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 public class ContactsActivity extends AppCompatActivity {
 
     public SharedPreferences sharedPref;
@@ -18,12 +20,17 @@ public class ContactsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_contacts);
         String email = sharedPref.getString(getString(R.string.user_email),null);
         String name = sharedPref.getString(getString(R.string.user_name),null);
+        String pictureUrl = sharedPref.getString(getString(R.string.user_profile_picture_url),"null");
         TextView tName = (TextView)findViewById(R.id.user_profile_name);
         tName.setText(name);
         TextView tEmail = (TextView)findViewById(R.id.email_contact_id);
         tEmail.setText(email);
         /* load image */
         ImageView profile_picture = (ImageView)findViewById(R.id.user_profile_picture);
-        Utils.loadImage(profile_picture, LoginActivity.id, getApplicationContext());
+       // Utils.loadImage(profile_picture, LoginActivity.id, getApplicationContext());
+        Picasso.with(this)
+                .load(pictureUrl)
+                .error(R.drawable.profile_barack)
+                .into(profile_picture);
     }
 }

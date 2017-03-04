@@ -144,9 +144,12 @@ public class LoginActivity extends AppCompatActivity {
                             email = object.getString("email");
                             pictureUrl = data.getJSONObject("picture").getJSONObject("data").getString("url");
                             editor.putString(getString(R.string.user_id),id);
-                            // write id to real time database
+                            /* write id to real time database
+                             * Image url to real time database
+                             */
                             editor.putString(getString(R.string.user_name),name);
                             editor.putString(getString(R.string.user_email),email);
+                            editor.putString(getString(R.string.user_profile_picture_url), pictureUrl);
                             editor.commit();
                            // rootRef.child("Users").child(id).child("Mail").setValue(email);
                            // rootRef.child("Users").child(id).child("Name").setValue(name);
@@ -159,13 +162,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
                 Bundle parameters = new Bundle();
-             //   if(first_time_user_connect == 1){
-                    parameters.putString("fields","id,name,email,picture.type(normall)");
-               // }
-               /* else {
-                     parameters.putString("fields","id,name,email");
-                }*/
-
+                parameters.putString("fields","id,name,email,picture.type(normal)");
                 request.setParameters(parameters);
                 request.executeAsync();
 
