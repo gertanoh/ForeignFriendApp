@@ -2,20 +2,24 @@ package com.group11.kth.foreignfriend;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -45,9 +49,11 @@ public class FilterActivity extends AppCompatActivity {
     ArrayList<Integer>fieldslist = new ArrayList<>();
     public SharedPreferences sharedPref;
 
-    int i =0;
 
+    // Make these static to keep the value
 
+    static String user_latitude;
+    static  String user_longitude;
 
 
     @Override
@@ -58,6 +64,8 @@ public class FilterActivity extends AppCompatActivity {
 
         final String id = sharedPref.getString(getString(R.string.user_id), "NoFacebookID");
         final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+
+        SharedPreferences  mPrefs;
 
         setContentView(R.layout.activity_filter);
 
@@ -115,10 +123,65 @@ public class FilterActivity extends AppCompatActivity {
 
                 //i++;
 
+                // ........... Update courses and fields tied to a specific user ..............
+
                 mRootRef.child("Users").child(id).child("filters").child("fields").updateChildren(fieldsmap);
                 mRootRef.child("Users").child(id).child("filters").child("courses").updateChildren(coursemap);
 
 
+                // ...... Get latitude value........
+                mRootRef.child("Users").child(id).child("location").child("latitude").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot snapshot) {
+
+                        // ... get the users longitude
+                        user_latitude=snapshot.getValue().toString();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
+               // mRootRef.child("Users").child(id).child("location").child("longitude").get;
+
+                //..... Get longitude value ........
+                mRootRef.child("Users").child(id).child("location").child("longitude").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot snapshot) {
+
+                        // ... get the users longitude
+                        user_longitude=snapshot.getValue().toString();
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
+
+
+                Toast.makeText(FilterActivity.this, "long"+user_longitude, Toast.LENGTH_LONG).show();
+                Toast.makeText(FilterActivity.this, "lat"+user_latitude, Toast.LENGTH_LONG).show();
+
+                // ..... Update longitude and latitude in the courses/fields
+
+                //mRootRef.child("Users").child(id).child("filters").child("courses").child("he1208").setValue()
+
+
+
+
+
+                //String lat = mRootRef.child("Users").child(id).child("location").child("latitude").get;
+                //Toast.makeText(FilterActivity.this, lat, Toast.LENGTH_LONG).show();
+
+                // String longit =
+
+
+                //mRootRef.child("filters").child("courses").child("he1208").child(id).child("latitude").setValue(mRootRef.child("Users").child(id).child("location"));
 
                 // Loop for updating courses
 
