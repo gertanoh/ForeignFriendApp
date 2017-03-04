@@ -4,6 +4,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -11,17 +12,43 @@ import android.os.Bundle;
 import android.telephony.PhoneNumberUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.ads.formats.NativeAd;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class StudentOnlineActivity extends AppCompatActivity implements View.OnClickListener{
 
     private TextView mMail;
     private TextView mMessenger;
     private  TextView mWhatsapp;
+    private TextView mName;
+    public String studentId;
+
+    public String imageURL;
+
+
+    final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        /* get id from marker */
+        Intent intent = getIntent();
+        studentId = intent.getStringExtra(getString(R.string.student_online_id));
+
+
         setContentView(R.layout.activity_student_online);
 
         // Clickable text
@@ -31,6 +58,64 @@ public class StudentOnlineActivity extends AppCompatActivity implements View.OnC
         mMessenger.setOnClickListener(this);
         mWhatsapp = (TextView) findViewById(R.id.whatsapp_id);
         mWhatsapp.setOnClickListener(this);
+        mName = (TextView) findViewById(R.id.user_profile_name);
+        mName.setOnClickListener(this);
+        rootRef.child(getString(R.string.Users)).child(studentId).child(getString(R.string.Name))
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        mName.setText((String)dataSnapshot.getValue());
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+        rootRef.child(getString(R.string.Users)).child(studentId).child(getString(R.string.Mail))
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        mMail.setText((String)dataSnapshot.getValue());
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+        rootRef.child(getString(R.string.Users)).child(studentId).child(getString(R.string.Phone))
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        mMessenger.setText((String)dataSnapshot.getValue());
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+        rootRef.child(getString(R.string.Users)).child(studentId).child(getString(R.string.Whatsapp))
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        mWhatsapp.setText((String)dataSnapshot.getValue());
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+        ImageView image = (ImageView) findViewById(R.id.user_online_picture);
+
+        imageURL = "https://graph.facebook.com/" + studentId + "/picture?type=large";
+        Picasso.with(this)
+                 .load(imageURL)
+                 .into(image);
+
+
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.bottomNavigationView);

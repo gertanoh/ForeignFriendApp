@@ -143,4 +143,7 @@
     <string name="Name">Name</string>
     <string name="Phone">Phone</string>
     <string name="Whatsapp">Whatsapp</string>
+
+    <!-- strings related to student online -->
+    <string name="student_online_id">student_online_id</string>
 </resources>
