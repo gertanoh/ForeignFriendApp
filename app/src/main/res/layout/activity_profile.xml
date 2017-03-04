@@ -117,7 +117,7 @@
                 android:id="@+id/profile_layout"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
-                android:background="#eb165d73"
+                android:background="#eb000000"
                 android:elevation="2dp"
                 android:paddingBottom="0dp"
                 android:layout_below="@+id/header_cover_image"

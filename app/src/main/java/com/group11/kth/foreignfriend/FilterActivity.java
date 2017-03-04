@@ -13,13 +13,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -129,6 +125,8 @@ public class FilterActivity extends AppCompatActivity {
                 mRootRef.child("Users").child(id).child("filters").child("courses").updateChildren(coursemap);
 
 
+
+                /*
                 // ...... Get latitude value........
                 mRootRef.child("Users").child(id).child("location").child("latitude").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -162,10 +160,12 @@ public class FilterActivity extends AppCompatActivity {
                     }
                 });
 
+                */
 
 
-                Toast.makeText(FilterActivity.this, "long"+user_longitude, Toast.LENGTH_LONG).show();
-                Toast.makeText(FilterActivity.this, "lat"+user_latitude, Toast.LENGTH_LONG).show();
+              //  Toast.makeText(FilterActivity.this, "long"+user_longitude, Toast.LENGTH_LONG).show();
+               // Toast.makeText(FilterActivity.this, "lat"+user_latitude, Toast.LENGTH_LONG).show();
+
 
                 // ..... Update longitude and latitude in the courses/fields
 
