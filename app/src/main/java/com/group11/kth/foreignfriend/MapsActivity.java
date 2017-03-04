@@ -111,70 +111,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      SharedPreferences  mPrefs;
 
 
-
-
-    public static FirebaseStorage storage = FirebaseStorage.getInstance();
-    StorageReference storageRef = storage.getReference();
-
-
-
-    private class DownloadProfilePicture extends AsyncTask<Void, Void, Integer> {
-        Bitmap profilePicture;
-
-        @Override
-        protected Integer doInBackground(Void... params) {
-            final Integer res = 0;
-
-            Bundle parameters = new Bundle();
-
-            URL picUrl;
-            try {
-
-                Thread.sleep(500);
-                picUrl = new URL(LoginActivity.pictureUrl);
-                String refName = "images/user_profile_"+LoginActivity.id+".jpg";
-                StorageReference imagesRef = storageRef.child(refName);
-                HttpURLConnection connection = (HttpURLConnection)picUrl.openConnection();
-                connection.setDoInput(true);
-                connection.connect();
-                InputStream in = connection.getInputStream();
-                UploadTask uploadTask = imagesRef.putStream(in);
-
-                uploadTask.addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getApplicationContext(),"Async Task Download failed", Toast.LENGTH_SHORT).show();
-                    }
-                });
-                uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-
-                    }
-                });
-
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
-            catch (IOException e) {
-                e.printStackTrace();
-            }
-            catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-
-            return res;
-        }
-
-        protected void onPostExecute(){
-
-        }
-
-    };
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -219,9 +155,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
 
 
-        if(!(LoginActivity.connect_value == 1)){
-            new DownloadProfilePicture().execute();
-        }
     }
 
 
@@ -514,38 +447,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         return false;
     }
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState){
 
-        if(storageRef != null){
-            outState.putString("reference",storageRef.toString());
-        }
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState){
-        super.onRestoreInstanceState(savedInstanceState);
-
-        // If there was an upload in progress, gets its reference and create a storage reference */
-        final String stringRef = savedInstanceState.getString("reference");
-        if(stringRef != null){
-            return;
-        }
-
-        storageRef = FirebaseStorage.getInstance().getReferenceFromUrl(stringRef);
-        // Find all Upload tasks under this reference
-        List tasks = storageRef.getActiveUploadTasks();
-        if(tasks.size() > 0 ){
-            // Get the monitoring task upload
-            UploadTask task = (UploadTask)tasks.get(0);
-            // Add new listener to the task using the activity scope
-            task.addOnSuccessListener(this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    // function, to handle the event
-                }
-            });
-        }
-    }
 
 }

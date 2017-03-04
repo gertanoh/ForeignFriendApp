@@ -7,8 +7,7 @@ import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
+
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageMetadata;
 import com.google.firebase.storage.StorageReference;
@@ -60,10 +59,10 @@ public class Utils {
 
     public static void loadImage( ImageView v, String user_id, Context context){
 
-        StorageReference storageRef = MapsActivity.storage.getReference();
-        StorageReference imagePath = storageRef.child("images/user_profile_"+user_id+".jpg");
+      //  StorageReference storageRef = MapsActivity.storage.getReference();
+      //  StorageReference imagePath = storageRef.child("images/user_profile_"+user_id+".jpg");
 
         // Load with Glide
-        Glide.with(context).using(new FirebaseImageLoader()).load(imagePath).into(v);
+      //  Glide.with(context).using(new FirebaseImageLoader()).load(imagePath).into(v);
     }
 }
