@@ -135,4 +135,12 @@
     <string name="user_email">email</string>
     <string name="user_id">id</string>
     <string name="user_first_time">first_time</string>
+    <string name="user_logged_once"></string>
+
+    <!-- strings related to the database -->
+    <string name="Users">Users</string>
+    <string name="Mail">Mail</string>
+    <string name="Name">Name</string>
+    <string name="Phone">Phone</string>
+    <string name="Whatsapp">Whatsapp</string>
 </resources>

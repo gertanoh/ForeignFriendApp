@@ -47,9 +47,9 @@ public class LoginActivity extends AppCompatActivity {
     public  FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     public ProgressDialog bar;
-    public static String id;
-    public static String name;
-    public static String email;
+    public static String id = null;
+    public String name;
+    public String email;
 
     private static final String TAG = "LoginActivity";
     public SharedPreferences sharedPref;
@@ -63,10 +63,7 @@ public class LoginActivity extends AppCompatActivity {
     public AccessToken accessToken;
     public Profile profile;
 
-    public static int first_time_user_connect ;
-
     public static int connect_value = -1 ;
-
 
 
     @Override
@@ -82,7 +79,6 @@ public class LoginActivity extends AppCompatActivity {
         if(connect_value == 1)
         {
             openMapActivity();
-
         }
         setContentView(R.layout.activity_login);
 
@@ -139,6 +135,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onCompleted(JSONObject object, GraphResponse response) {
                         try {
                             JSONObject data = response.getJSONObject();
+                            String old_id;
                             id = object.getString("id");
                             name = object.getString("name");
                             email = object.getString("email");
@@ -150,9 +147,14 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString(getString(R.string.user_name),name);
                             editor.putString(getString(R.string.user_email),email);
                             editor.putString(getString(R.string.user_profile_picture_url), pictureUrl);
+                            old_id = sharedPref.getString(getString(R.string.user_id), "null");
                             editor.commit();
-                           // rootRef.child("Users").child(id).child("Mail").setValue(email);
-                           // rootRef.child("Users").child(id).child("Name").setValue(name);
+                           /* if(id != old_id){
+                                rootRef.child(getString(R.string.Users)).child(id).child(getString(R.string.Phone)).setValue("");
+                                rootRef.child(getString(R.string.Users)).child(id).child(getString(R.string.Whatsapp)).setValue("");
+                            }*/
+                            rootRef.child(getString(R.string.Users)).child(id).child(getString(R.string.Mail)).setValue(email);
+                            rootRef.child(getString(R.string.Users)).child(id).child(getString(R.string.Name)).setValue(name);
 
 
                         } catch (JSONException e) {
@@ -162,7 +164,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
                 Bundle parameters = new Bundle();
-                parameters.putString("fields","id,name,email,picture.type(normal)");
+                parameters.putString("fields","id,name,email,picture.type(large)");
                 request.setParameters(parameters);
                 request.executeAsync();
 

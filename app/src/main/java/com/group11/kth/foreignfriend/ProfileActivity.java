@@ -42,13 +42,14 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         findViewById(R.id.contact_id).setOnClickListener(this);
         findViewById(R.id.delete_account_id).setOnClickListener(this);
         findViewById(R.id.sign_out_id).setOnClickListener(this);
-        findViewById(R.id.editPicButton).setOnClickListener(this);
+      //  findViewById(R.id.editPicButton).setOnClickListener(this);
         TextView v = (TextView) findViewById(R.id.user_profile_name);
         v.setText(name);
         ImageView image = (ImageView) findViewById(R.id.user_profile_picture);
         /* load image */
         Picasso.with(this)
                 .load(pictureUrl)
+                .placeholder(R.drawable.profile_barack)
                 .error(R.drawable.profile_barack)
                 .into(image);
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
@@ -137,9 +138,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         else if (i == R.id.sign_out_id){
            signOutHandle();
         }
-        else if (i == R.id.editPicButton){
+        /*else if (i == R.id.editPicButton){
             changeBackgroundPicture();
-        }
+        }*/
     }
 
     private void showDialog(){
