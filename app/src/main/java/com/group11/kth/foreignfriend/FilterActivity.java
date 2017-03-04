@@ -18,7 +18,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 // Axel Hult 2017-02-14:
 // Acitivity for applying filters to the results on the map
@@ -56,9 +55,10 @@ public class FilterActivity extends AppCompatActivity {
 
         sharedPref = this.getSharedPreferences(getString(R.string.user_log_status_file), Context.MODE_PRIVATE);
 
-        final String id = sharedPref.getString(getString(R.string.user_id), "NoFacebookID");
+        String id = sharedPref.getString(getString(R.string.user_id), "123455");
         final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
 
+        rootRef.child("Users").child(id).child("Add a field").setValue("I don't study MAth");
         setContentView(R.layout.activity_filter);
 
         // Reference to the ROOT!
@@ -66,14 +66,7 @@ public class FilterActivity extends AppCompatActivity {
         // Refernce to subfield!!
         //final DatabaseReference subref = mRootRef.child("test");
 
-        // ............... Hashmaps ..............
-        // Holds courses and fields selected
-        // Uppdated in the "done" button
-
-        final HashMap<String,Object> fieldsmap = new HashMap<String, Object>();
-
-        final HashMap<String,Object> coursemap = new HashMap<String, Object>();
-
+        mRootRef.child("filtertest").setValue("in the filter activity");
 
 
         // .................. ACTIONS FOR NAVBAR ........................
@@ -112,18 +105,25 @@ public class FilterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                // Make call to server here??
 
-                //i++;
+                // Make call to server here?? ............................
 
-                mRootRef.child("Users").child(id).child("filters").child("fields").updateChildren(fieldsmap);
-                mRootRef.child("Users").child(id).child("filters").child("courses").updateChildren(coursemap);
+                // Try writing zero-elementh to datbase
+                //String coursezero = courselist.get(1).toString();
+                i++;
+
+
+                mRootRef.child("filtertest").setValue("done");
+
+                mRootRef.child("filtertest").setValue(fieldslist.toString());
+
 
 
 
                 // Loop for updating courses
 
                 // ................ Overwrite old ones ...................
-                /*
                 for (int j = 0; j < 6; j++){
 
                     String n = String.valueOf(j);
@@ -135,42 +135,24 @@ public class FilterActivity extends AppCompatActivity {
                     mRootRef.child("users").child("axelhult").child("filters").child("courses").child(n).setValue((coursearray[courselist.get(k)]));
 
                 }
-                */
+
 
                 // Loop for updating fields in database
 
                 // Max 6 fields right now!
 
                 // ........... Overwrite old ones .....................
-                /*
                 for (int p = 0; p < 6; p++){
 
                     String m = String.valueOf(p);
                     mRootRef.child("users").child("axelhult").child("filters").child("fields").child(m).setValue(0);
-
                 }
-                */
 
-
-                //mRootRef.child("users").child("axelhult").child("filters").child("fields").removeValue();
-                //HashMap<String,Object> updateFilters = new HashMap<String, Object>();
-                //updateFilters.put("ID001",true);
-                //updateFilters.put("HL1208", true);
-                //updateFilters.put("MM0000", true);
-
-               // updateFilter.put(111, null
-
-                /*
                 for (int i=0; i<(fieldslist.size()); i++) {
                     String s = String.valueOf(i);
-                    mRootRef.child("users").child("axelhult").child("filters").child("fields").child(s)
-                            .setValue((fieldsarray[fieldslist.get(i)]));
+                    mRootRef.child("users").child("axelhult").child("filters").child("fields").child(s).setValue((fieldsarray[fieldslist.get(i)]));
 
                 }
-                */
-
-               // mRootRef.child("users").child("axelhult").child("filters").child("fields").updateChildren(updateFilters);
-
 
 
 
@@ -208,26 +190,11 @@ public class FilterActivity extends AppCompatActivity {
 
                         //When user selects item... add OR remove
                         if(isChecked){
-
                             if(! fieldslist.contains(pos)){
                                 fieldslist.add(pos);
-
-                                //updateFilters2.put("hej", true);
-                                //updateFilters2.put(fieldsarray[fieldslist.get(pos)].toString(), true);
-
-                                //mRootRef.child("Users").child("55").child("test").setValue(coursearray[fieldslist.get(1)]);
-
                             }
                             }else if(fieldslist.contains(pos)){
-
-                                //mRootRef.child("users").child("axelhult").child("filtes").child("fields").removeValue(fieldsarray[fieldslist.get(pos)]
-
-                               // updateFilters2.put(fieldsarray[fieldslist.get(pos)].toString(), null);
-
-                                //updateFilters2.put(fieldslist.get(pos).toString(), null);
                                 fieldslist.remove(Integer.valueOf(pos));
-
-
                         }
                     }
                 });
@@ -238,21 +205,9 @@ public class FilterActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String item = "";
-
-                        // clear old ones...
-                        fieldsmap.put("Chemistry", null);
-                        fieldsmap.put("Math", null);
-                        fieldsmap.put("IT", null);
-                        fieldsmap.put("Business", null);
-                        fieldsmap.put("Physics", null);
-
-
                         for (int i=0;i< fieldslist.size(); i++){
                             item = item+"   "+fieldsarray[fieldslist.get(i)];
                             //add comma, tab, new line or somehting here?
-
-                            fieldsmap.put(fieldsarray[fieldslist.get(i)], true); // update new ones
-
                         }
                         fieldsSelected.setText(item);
                     }
@@ -270,16 +225,6 @@ public class FilterActivity extends AppCompatActivity {
                 mbuilder.setNeutralButton("Clear all", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
-                        // clear old ones...
-
-                        fieldsmap.put("Chemistry", null);
-                        fieldsmap.put("Math", null);
-                        fieldsmap.put("IT", null);
-                        fieldsmap.put("Business", null);
-                        fieldsmap.put("Physics", null);
-
-
                         for (int i =0; i<checkedfields.length; i++){
                             checkedfields[i]=false;
                             fieldslist.clear();
@@ -327,19 +272,9 @@ public class FilterActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         String item = "";
 
-                        // clear old ones...
-                        coursemap.put("ID2216", null);
-                        coursemap.put("IS1200", null);
-                        coursemap.put("HE1208", null);
-                        coursemap.put("SK1101", null);
-                        coursemap.put("AD001", null);
-                        coursemap.put("AC0002", null);
-
                         for (int i=0;i< courselist.size(); i++){
                             item = item+"   "+coursearray[courselist.get(i)];
                             //add comma, tab, new line or somehting here?
-
-                            coursemap.put(coursearray[courselist.get(i)], true);
                         }
                         courseSelected.setText(item);
                     }
@@ -357,13 +292,6 @@ public class FilterActivity extends AppCompatActivity {
                 mbuilder.setNeutralButton("Clear all", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        coursemap.put("ID2216", null);
-                        coursemap.put("IS1200", null);
-                        coursemap.put("HE1208", null);
-                        coursemap.put("SK1101", null);
-                        coursemap.put("AD001", null);
-                        coursemap.put("AC0002", null);
-
                         for (int i =0; i<checkedcourses.length; i++){
                             checkedcourses[i]=false;
                             courselist.clear();
