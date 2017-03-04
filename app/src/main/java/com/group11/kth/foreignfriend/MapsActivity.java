@@ -205,11 +205,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         //.....................................................
 
-
+/*
         LatLng student1 = new LatLng(59.346098, 18.072738);
         LatLng student2 = new LatLng(59.347970, 18.068914);
         LatLng student3 = new LatLng(59.349006, 18.074619);
-        LatLng student4 = new LatLng(59.346477, 18.076880);
+        LatLng student4 = new LatLng(59.346477, 18.076880);*/
 
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
@@ -227,8 +227,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
-        float zoomLevel = (float) 16.0; //This goes up to 21
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(59.346784, 18.070724), zoomLevel));
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
@@ -241,7 +239,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 16);
                 mMap.animateCamera(cameraUpdate);
                 updateLocation(latLng);
-                Toast.makeText(MapsActivity.this, latLng.toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MapsActivity.this, latLng.toString(), Toast.LENGTH_SHORT).show();
 
             }
 
