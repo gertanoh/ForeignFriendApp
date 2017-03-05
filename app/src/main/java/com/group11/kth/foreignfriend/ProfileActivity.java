@@ -5,13 +5,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.provider.ContactsContract;
+import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -19,12 +17,14 @@ import android.widget.TextView;
 
 import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener
                 {
-
+                    final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
 
     // variables
     public static final int REQUEST_IMAGE_PICTURE = 1;
@@ -42,13 +42,14 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         findViewById(R.id.contact_id).setOnClickListener(this);
         findViewById(R.id.delete_account_id).setOnClickListener(this);
         findViewById(R.id.sign_out_id).setOnClickListener(this);
-        findViewById(R.id.editPicButton).setOnClickListener(this);
+      //  findViewById(R.id.editPicButton).setOnClickListener(this);
         TextView v = (TextView) findViewById(R.id.user_profile_name);
         v.setText(name);
         ImageView image = (ImageView) findViewById(R.id.user_profile_picture);
         /* load image */
         Picasso.with(this)
                 .load(pictureUrl)
+                .placeholder(R.drawable.profile_barack)
                 .error(R.drawable.profile_barack)
                 .into(image);
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
@@ -109,6 +110,12 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
     private void signOutHandle(){
         // Firebase sign out
+
+        // Tell the DB that the user has logged out
+        sharedPref = this.getSharedPreferences(getString(R.string.user_log_status_file), Context.MODE_PRIVATE);
+        String id = sharedPref.getString(getString(R.string.user_id), "-");
+        rootRef.child("Users").child(id).child("logedin").setValue("false");
+
         FirebaseAuth.getInstance().signOut();
         LoginManager.getInstance().logOut();
         sharedPref  = this.getSharedPreferences(getString(R.string.user_log_status_file), Context.MODE_PRIVATE);
@@ -137,9 +144,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         else if (i == R.id.sign_out_id){
            signOutHandle();
         }
-        else if (i == R.id.editPicButton){
+        /*else if (i == R.id.editPicButton){
             changeBackgroundPicture();
-        }
+        }*/
     }
 
     private void showDialog(){

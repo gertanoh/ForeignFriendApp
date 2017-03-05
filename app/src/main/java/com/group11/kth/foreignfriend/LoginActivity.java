@@ -4,18 +4,23 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.AsyncTask;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
-import android.widget.ImageView;
 import android.widget.Toast;
-import com.facebook.*;
+
+import com.facebook.AccessToken;
+import com.facebook.AccessTokenTracker;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.Profile;
+import com.facebook.ProfileTracker;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,12 +36,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Arrays;
 
 
@@ -47,9 +46,9 @@ public class LoginActivity extends AppCompatActivity {
     public  FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     public ProgressDialog bar;
-    public static String id;
-    public static String name;
-    public static String email;
+    public static String id = null;
+    public String name;
+    public String email;
 
     private static final String TAG = "LoginActivity";
     public SharedPreferences sharedPref;
@@ -63,10 +62,7 @@ public class LoginActivity extends AppCompatActivity {
     public AccessToken accessToken;
     public Profile profile;
 
-    public static int first_time_user_connect ;
-
     public static int connect_value = -1 ;
-
 
 
     @Override
@@ -82,7 +78,6 @@ public class LoginActivity extends AppCompatActivity {
         if(connect_value == 1)
         {
             openMapActivity();
-
         }
         setContentView(R.layout.activity_login);
 
@@ -139,6 +134,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onCompleted(JSONObject object, GraphResponse response) {
                         try {
                             JSONObject data = response.getJSONObject();
+                            String old_id;
                             id = object.getString("id");
                             name = object.getString("name");
                             email = object.getString("email");
@@ -150,9 +146,23 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString(getString(R.string.user_name),name);
                             editor.putString(getString(R.string.user_email),email);
                             editor.putString(getString(R.string.user_profile_picture_url), pictureUrl);
+                            old_id = sharedPref.getString(getString(R.string.user_id), "null");
                             editor.commit();
-                           // rootRef.child("Users").child(id).child("Mail").setValue(email);
-                           // rootRef.child("Users").child(id).child("Name").setValue(name);
+
+                            Toast.makeText(LoginActivity.this, "id:"+id, Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this, "old id"+old_id, Toast.LENGTH_LONG).show();
+
+                            if(!(id.equals(old_id))){
+                                Toast.makeText(LoginActivity.this, "INSIDE IF-STATEMENt, NEW USER", Toast.LENGTH_LONG).show();
+
+                                rootRef.child(getString(R.string.Users)).child(id).child(getString(R.string.Phone)).setValue("");
+                                rootRef.child(getString(R.string.Users)).child(id).child(getString(R.string.Whatsapp)).setValue("");
+
+                            }
+
+                            rootRef.child(getString(R.string.Users)).child(id).child(getString(R.string.Mail)).setValue(email);
+                            rootRef.child(getString(R.string.Users)).child(id).child(getString(R.string.Name)).setValue(name);
+                            rootRef.child(getString(R.string.Users)).child(id).child("logedin").setValue("true");
 
 
                         } catch (JSONException e) {

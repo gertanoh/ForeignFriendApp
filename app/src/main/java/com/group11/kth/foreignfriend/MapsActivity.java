@@ -100,6 +100,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private LocationManager locationManager;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     HashMap<String,Marker> existingMarkers = new HashMap<String, Marker>();
+    // Update userid to real Facebook user id
     String userId = "juanluisrto";
     private static final long MIN_TIME = 400;
     private static final float MIN_DISTANCE = 5;
@@ -114,6 +115,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        /* set user id*/
+       // userId = mPrefs.getString(getString(R.string.user_id),"null");
+
         setContentView(R.layout.activity_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -489,7 +494,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public boolean onMarkerClick(Marker marker) {
         // to be detailed
         Intent intent = new Intent(this, StudentOnlineActivity.class);
+<<<<<<< HEAD
         //startActivity(intent);
+=======
+        // send userId
+        String userId = "10154392139174033";
+        intent.putExtra(getString(R.string.student_online_id),userId);
+        startActivity(intent);
+>>>>>>> origin/master
         return false;
     }
 
