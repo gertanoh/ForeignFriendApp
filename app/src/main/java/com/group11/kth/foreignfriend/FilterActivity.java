@@ -80,6 +80,7 @@ public class FilterActivity extends AppCompatActivity {
 
 
 
+
         // .................. ACTIONS FOR NAVBAR ........................
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.bottomNavigationView);
@@ -260,6 +261,9 @@ public class FilterActivity extends AppCompatActivity {
         checkedcourses=new boolean[coursearray.length];
         checkedfields=new boolean[fieldsarray.length];
 
+
+
+
         fields.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -302,12 +306,21 @@ public class FilterActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         String item = "";
 
-                        // clear old ones...
+                        // Clear old fields tied to user ID
+
                         fieldsmap.put("Chemistry", null);
                         fieldsmap.put("Math", null);
                         fieldsmap.put("IT", null);
                         fieldsmap.put("Business", null);
                         fieldsmap.put("Physics", null);
+
+                        // Remove old subscriptions to fields
+
+                        rootRef.child("_filters").child("fields").child("Math").child(id).removeValue();
+                        rootRef.child("_filters").child("fields").child("Physics").child(id).removeValue();
+                        rootRef.child("_filters").child("fields").child("Chemistry").child(id).removeValue();
+                        rootRef.child("_filters").child("fields").child("Business").child(id).removeValue();
+                        rootRef.child("_filters").child("fields").child("IT").child(id).removeValue();
 
 
                         for (int i=0;i< fieldslist.size(); i++){
@@ -315,6 +328,11 @@ public class FilterActivity extends AppCompatActivity {
                             //add comma, tab, new line or somehting here?
 
                             fieldsmap.put(fieldsarray[fieldslist.get(i)], true); // update new ones
+
+                            // subscribe user to fields
+                            rootRef.child("_filters").child("fields").child(fieldsarray[fieldslist.get(i)]).child(id).child("latitude").setValue(getUserLat());
+                            rootRef.child("_filters").child("fields").child(fieldsarray[fieldslist.get(i)]).child(id).child("longitude").setValue(getUserLong());
+
 
                         }
                         fieldsSelected.setText(item);
@@ -398,11 +416,27 @@ public class FilterActivity extends AppCompatActivity {
                         coursemap.put("AD001", null);
                         coursemap.put("AC0002", null);
 
+                        // Clear old subscriptions
+                        rootRef.child("_filters").child("courses").child("ID2216").child(id).removeValue();
+                        rootRef.child("_filters").child("courses").child("IS1200").child(id).removeValue();
+                        rootRef.child("_filters").child("courses").child("HE1208").child(id).removeValue();
+                        rootRef.child("_filters").child("courses").child("SK1101").child(id).removeValue();
+                        rootRef.child("_filters").child("courses").child("AD001").child(id).removeValue();
+                        rootRef.child("_filters").child("courses").child("AC0002").child(id).removeValue();
+
+                        //rootRef.child("_filters").child("courses").child(coursearray[courselist.get(i)]).child(id).child("test").setValue(1);
+
                         for (int i=0;i< courselist.size(); i++){
                             item = item+"   "+coursearray[courselist.get(i)];
                             //add comma, tab, new line or somehting here?
 
+                            // adds the courses under the userID
                             coursemap.put(coursearray[courselist.get(i)], true);
+
+
+                            // subscribe user to courses
+                            rootRef.child("_filters").child("courses").child(coursearray[courselist.get(i)]).child(id).child("latitude").setValue(getUserLat());
+                            rootRef.child("_filters").child("courses").child(coursearray[courselist.get(i)]).child(id).child("longitude").setValue(getUserLong());
                         }
                         courseSelected.setText(item);
                     }
@@ -437,12 +471,26 @@ public class FilterActivity extends AppCompatActivity {
                 });
                 AlertDialog mdialog = mbuilder.create();
                 mdialog.show();
+
+
             }
         });
 
 
 
     }
+
+    public String getUserLat(){
+
+        return "latitude";
+    }
+
+    public String getUserLong(){
+
+        return "longitude";
+    }
+
+
 
 
 } //activity
