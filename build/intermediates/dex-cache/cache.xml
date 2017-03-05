@@ -3,1254 +3,660 @@
 
     <item
         is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\10.0.1\jars\classes.jar"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="7a64bf6dc775198eed9db9468a133adf7dfe6562">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-fitness-10.0.1_832b8d1990b07f5cf70e62f09491e6ac45ad3b67\classes.dex" />
+        sha1="8308ed003522a2ee8958311afcc4cfd0470377cd">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gcm-10.0.1_9e99bebc537bf0c183cba59f65893b12287aca21\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\10.0.1\jars\classes.jar"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.20.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-10.0.1_a230425de6dfef245eaf817037466ef73c044feb\classes.dex" />
+        sha1="cb2ef781533c3f11c4e80341cbaebad275c66586">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.facebook.android-facebook-android-sdk-4.20.0_8431de462fc0e6bcfb568e32fd1b9d58f8b351fc\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\10.0.1\jars\classes.jar"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="c14f0c89f28cf782e42581ab0aba5f63af39b3d2">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-plus-10.0.1_e5a6cdb520197750b120118dc4c5664eec83582b\classes.dex" />
+        sha1="27777b3cad3c20b1acab19f6e37fe3e03371bf6e">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-maps-10.0.1_10883d85bfddb86cf6583842221b68ef7448cb0b\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="7a64bf6dc775198eed9db9468a133adf7dfe6562">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-fitness-10.0.1_4d43e4d2e87b4840af5d248d6e923c34815a3b10\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast-framework\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="df1cb17511aabbb63264a0024949d1e42502a512">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-framework-10.0.1_e0f2da31891ce7e70cd9de9584e3c29a35f9a124\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="50343b6e2212118d1fa59a76752dbbeda0824771">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_5ae6f3c28004272821a1ebec5f8d0c3044a3c113\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-instantapps\10.0.1\jars\classes.jar"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-instantapps\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="45305e6af414dab5aba6c3225081c2f15c3bdd1e">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-instantapps-10.0.1_9e76e5312381bc956f3e7e6f21f63b86d1fc9878\classes.dex" />
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-instantapps-10.0.1_b323fad7074a68b063498e647b59ce3e75b00080\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-instantapps\10.0.1\jars\classes.jar"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="45305e6af414dab5aba6c3225081c2f15c3bdd1e">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-instantapps-10.0.1_813839a4e9fe84c6917197236cba93df81c42ad3\classes.dex" />
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.1.1_731032d862ad193f581e0f805fd8b6bc844c6ba0\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-crash\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.1.1_86e622f69965a1995ecd60ec1ef1e027a4843140\classes.dex" />
+        sha1="de29a39f9260f88151b1ef453140e71c76b6c415">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-crash-10.0.1_cf6163cd55bc498c90a7426ebe91c65d1a57d6bf\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f6cf557be4dbd0282ea2388633e5378634423226">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-safetynet-10.0.1_b7da4e93c6a4c5ca24eacc59707c77b464010c0c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="2d5d113b0352ab60946fc44c518cf68fd26cbb79">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wallet-10.0.1_5c44f73228db245b8fe66a2d240b74574ce99ce9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="408a599ac77cd17fe8e8919326bec617b3d005bd">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wearable-10.0.1_5e75099112978a62d5d768a2823b5d4ce0aef1f9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-10.0.1_3c9a376358ac666972cf11bf1edcfc88b157a181\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage-common\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="09cf6aa1390f95157e8295d02be7868f568825fc">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-common-10.0.1_4651a424220dff6306b7f1c2d164e00c350e084e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database-connection\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-connection-10.0.1_9e5f5ee6d31d1eb653aadddc454c6255369f2b89\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="a48dc0b148059764d32500be558702d5ff932058">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-identity-10.0.1_927e1f68619abb65ac499f41afb10ee3b1e90e25\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-10.0.1_6e8b6433fcaa04910c05b737b49264ff506cf680\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.1.1_26b3f73a8cf3760abfe3a9e8369678da93ac8b72\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-10.0.1_3e0d56e70813baf63baf934b6c0e236909b4f0a6\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-10.0.1_b1261fc03a3d440416d53e3777bf55f32998b1b0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="4c829ff0ccfecb28a999ee46d9e75948dfc777a4">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-10.0.1_76fbf99ebb29c3a9cd56e5aa5cbdc08f8cdf9e3a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c14f0c89f28cf782e42581ab0aba5f63af39b3d2">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-plus-10.0.1_1fc5a09c3b71893c38f03b083ade21655084b279\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="a48dc0b148059764d32500be558702d5ff932058">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-identity-10.0.1_93ae374ad4335f7435ddc35d381f172c3f27254f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.1.1_36de00517c8fcf6bd582c883eb7a4890d3820c3c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.19.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c6047a34af07d6ec4e950ba1dc70ce23ac65ecaa">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.facebook.android-facebook-android-sdk-4.19.0_461825db41705eb26b98ad4caacbfe46f770b392\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.1.1_e5f54fb5609c6f1cc5ea101700143b83b35159fa\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.19.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c6047a34af07d6ec4e950ba1dc70ce23ac65ecaa">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.facebook.android-facebook-android-sdk-4.19.0_3b26c71a4fde7b732cef732be14f7088219d57c4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="92c871a22463a247e8a77a9f3fd231c278788c4a">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-panorama-10.0.1_a8f16d8d3248fc5bd5c909344ff45cefb08b6659\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\HENRY\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\bolts-applinks-1.4.0_6a63c48dc4606f73f1d8599f6f7a65d02816b5b2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\customtabs\25.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="94ba691efc31bf53264db0716d9c9ec03843ea31">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-customtabs-25.0.0_80739517df27f3edac24c99f92bdc944c3c7e22b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.1.1_60875d6010ed60633e9bf5793ee486596c0b0dfe\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\HENRY\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
+        jar="C:\Users\juanl\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.1.1_955515ca31066ed005d52f4ab176020ba9d24468\classes.dex" />
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.1.1_acc1f8d8d9bf6e2666c65c9d26e7079b6352ddd4\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\24.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-mediarouter-v7-24.0.0_1cdd0f97bf4319e3504b33f39082f5ea3d9d4d43\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="408a599ac77cd17fe8e8919326bec617b3d005bd">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wearable-10.0.1_b98756aa27889a63e9ebcd8090bb6583573e9bf5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="6bb5d347ebc0c6ef3c83a905222a688da5d2f7b4">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-iid-10.0.1_df86086e767fc9877c4300c2e614846ea15f7359\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="8308ed003522a2ee8958311afcc4cfd0470377cd">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gcm-10.0.1_de571d03e0593f0ae059574a0cd192ed967d1d7c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.firebase\firebase-config\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="ffc15e965a9e8c28f24455eedd4cac215c45d1fc">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-config-10.0.1_b847517ce487bf5f538cb533c7768afbc85f3627\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="4c829ff0ccfecb28a999ee46d9e75948dfc777a4">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-10.0.1_110a979b2c3aca1ebd0c8384d56894b19fe244e2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager-api\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="b1df8fa3d372a27e4e969ce00b00689ee1eed031">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-api-10.0.1_86a3d28b366b391abf5a2ae6dcfa72f57b0d09ad\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="92c871a22463a247e8a77a9f3fd231c278788c4a">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-panorama-10.0.1_8cc5d760be68e7b586eb933c1a9ec1501ef6d723\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.android.support\palette-v7\24.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-palette-v7-24.0.0_0d7a76f0168887c4bc7206ea83e5f41984b8f87a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.1.1_0afbe418b25292f74264845e0f193f943b752890\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager-v4-impl\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f23ad0f8e58713ff4b55f61c0bbde3830378347c">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-v4-impl-10.0.1_38262f179e6dd3fb6c498bdc8d299fd54e517a9c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="971509bbe30bb7b971fc1c49d7b23d0d818830ac">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-10.0.1_e7e12563dc0c744e7ba2d58335193d2bae0aaa92\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="8308ed003522a2ee8958311afcc4cfd0470377cd">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gcm-10.0.1_82705d41a812c03bc6a30af433dca0c836358a74\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.1.1_989461b4d43ac0636b6bacf94f265173937b867c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="44a694d4095be84c2888764b1f7256b385c030ad">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-location-10.0.1_8743b271285373eb902c353fbe7c775d5313c291\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-crash\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="de29a39f9260f88151b1ef453140e71c76b6c415">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-crash-10.0.1_dcdd301318db9c250fa938563f98230b98e52773\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.1.1_92f0a517fe0c12e2579b9345e7d00a346495e91a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.1.1_b246dd1b71b350b1e8a8d758890443d4936d4b85\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="d0460bf07cc3657e0be518ca01c174493951c6b8">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-10.0.1_4ae1e1d6890172fba839bb051349ccd54ad7abf0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-awareness\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="4385ccc0a88b33d182a836eadb47be55c8eb1107">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-awareness-10.0.1_f5c7be26591e2fee4f9d3cf443e1a7d8be3ef5ba\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\design\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.1.1_29cd3867c4a06812eeaac606efda1db41c852231\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.1.1_d6278fda3d78bd106d57240a328daf0484c7640d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="771267c5b0c7a5b348d3205dcfa1f871af7e0177">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-10.0.1_f1f9e420f92a0dfd08fbea9f4fff166e7a5c5fd8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.1_4293bbcee36e1e17cc44bd1d50a85fd4d7ec72d2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.0.1_cd34e5ce48530802da3035af859bcb0df0ed907d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.firebase\firebase-messaging\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="4b17463c814bdc562fb0392fa3494063623a0904">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-messaging-10.0.1_9f21932b48ef7707c7dcb12a40e3cff37c2f3044\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="39907d5c8f5902fffef30160ca7447c93b82405c">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appinvite-10.0.1_10baa7aa979ace8126937391b8af8b0f8bb5e7f7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="2d5d113b0352ab60946fc44c518cf68fd26cbb79">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wallet-10.0.1_b37e8c52740841c27d7c213fec7d09d9b398e6a5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gass\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="57c2eceb8548de84509d1ebc293fedec53231f6c">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gass-10.0.1_4f65a0549bb0b5a0a494b46bf42cacca90b7c61c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="39907d5c8f5902fffef30160ca7447c93b82405c">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appinvite-10.0.1_be7d79e938574a3187136b531cb981eae945d213\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-10.0.1_18a57adc74fd444255d6b81055063e74de9311b6\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c6e1f361e9d61aece9dac39b77fcc98a337a144d">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-nearby-10.0.1_afbeb20aa67acabda07fee06ebe0b4f6d68b821d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e2185aff89caeb337b1ffc36d5e525d8318e7cfe">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-10.0.1_9e5e4ec4bc865f301034f1efa88707657511402c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="8a372c4191f80489770a231f7be4820b204b886a">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-25.0.0_5464a079dbee2a7381d4b37415aa1f8a7c2426b7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="6bb5d347ebc0c6ef3c83a905222a688da5d2f7b4">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-iid-10.0.1_7d1ba355b0d2ab75a8f658f0a45f454126ffe479\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast-framework\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="df1cb17511aabbb63264a0024949d1e42502a512">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-framework-10.0.1_5ad5792ed64a9df3681c65190841d3ce83df8547\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\24.0.0\jars\libs\internal_impl-24.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.0.0_169a52a996e3166179dfc6eb8546a2b0276904da\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-places\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f3e51e9c5233b8897f61e08a6a27bc36283c2724">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-places-10.0.1_9562a87ad5e4a0132782dea7fba961bb39d5ca9f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.1.1_43cf3be7f5ef4fe41bad610fa45947961a410ed2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics-impl\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e871881b36b32e6bfd271a830c6eeb54ff0fc185">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-impl-10.0.1_8b0634e09c6b484420e9c98624dd9403ba2aa4fd\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="b955cb3a1ad6f1b6ff728ce1e0cd592c1717b440">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-lite-10.0.1_9606363cecae23ad291db179f43cd61567ed3bab\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-10.0.1_d80ebd12fd1e8731d1552119cf2011106d432135\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e96c6974cf924e7ee3b230e6847d5731423388c9">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-base-10.0.1_83a1badeaf7d3f4b69eb2a489410bba4ac0559b5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager-v4-impl\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f23ad0f8e58713ff4b55f61c0bbde3830378347c">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-v4-impl-10.0.1_33ef08f0769783c4ae480b3ed1b4b37cd0b47b54\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="d0460bf07cc3657e0be518ca01c174493951c6b8">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-10.0.1_370ecacd0b3582da78c1920b801481f62e35bb63\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e2185aff89caeb337b1ffc36d5e525d8318e7cfe">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-10.0.1_4f18e308e64c7ac5b8a1d38e3b470aa103377294\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.1.1_1a4c85cb7d19b081d8fa0a2ecac0e9ba21d1ecfb\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="57e5f4e5956fc69650b418f2ac405a54f40e1c27">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_62e3970e319cb9d13b1398771a16076989a9f29e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="771267c5b0c7a5b348d3205dcfa1f871af7e0177">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-10.0.1_2041a3c51407923bb7192431686eda2342c5386d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="ba6aa5e69ef31dee57208125323cee958fc67565">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-vision-10.0.1_14ffe696027d57efb467b7b87696e72451ac458f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="028f8255cb977b29cdffbfcf05caa0459686120c">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-drive-10.0.1_452c957ec9029988a1a40eee02a0984a77cabe04\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.1.1_051fbe927183fcd435f33fadf3ea3c62d6361f40\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="44a694d4095be84c2888764b1f7256b385c030ad">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-location-10.0.1_904d1969825248099638859cb2bf16f3ccea8046\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-10.0.1_d425ab3d14f8587748bc6737bca9c1d49088c244\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\24.0.0\jars\libs\internal_impl-24.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.0.0_4f32457ec966e2321fa66f862257a3b65970b806\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gass\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="57c2eceb8548de84509d1ebc293fedec53231f6c">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gass-10.0.1_0415a7a9083a619153940bfa79baeea119c591c4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-10.0.1_da0aa34df15443e0fce86d3eabcef5f7d86ce1a0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.1.1_98fe3dfeba8111ba43e6caa93f2d82bd328f3ebf\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="b955cb3a1ad6f1b6ff728ce1e0cd592c1717b440">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-lite-10.0.1_2cd8fddddb574492a59c91dd4b4d33073f73be72\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-10.0.1_933262e8a6e0f007bdcf3a05dff6afae7f9e27eb\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="971509bbe30bb7b971fc1c49d7b23d0d818830ac">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-10.0.1_2ae51002a890cceab481228eb9d1aa1daa67cea9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage-common\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="09cf6aa1390f95157e8295d02be7868f568825fc">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-common-10.0.1_7df5b6cddd725734fb86079880fd6e1065251db3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics-impl\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e871881b36b32e6bfd271a830c6eeb54ff0fc185">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-impl-10.0.1_1dbbca0823e484f7d96ea6ecae2a7b35d3309517\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.1.1_569ecb9cde081b29b5aa4b28b4d3be4b2ef05fb3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-clearcut\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="1d193729baf37df3d902a423291423a0df7e3779">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-clearcut-10.0.1_b6fc9f12719ad7da7141b01e4f4e0a4c3952b575\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-10.0.1_ec1c69f6f6c070e06914301d389f4b8742156468\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="8a372c4191f80489770a231f7be4820b204b886a">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-25.0.0_a69cce412c29170ad0acf858f0131a25bdda59dd\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.android.support\design\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.1.1_2c084c943b4ba8c077c7c0d07e09022a139addde\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f242bd32f0295883021f3d761d9de100748fd58e">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_a5f098675ecf41d17b3f2d5c524a9d75443226e3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\HENRY\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\bolts-tasks-1.4.0_1a995d9aee415a8b71002c84aac640d5cda0cd4a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f6cf557be4dbd0282ea2388633e5378634423226">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-safetynet-10.0.1_fe69eb1a6182215e372a239bd4a1c3218aa7e6ba\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="dd39827d2067497e60e21da48a7926000b6d4b0c">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-10.0.1_9a2614ddea47d5ca02cebcdc207a8499ae8fe1c5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-10.0.1_7f07fa03c2afb9fd769e4681890ef4b157f45004\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.1_4f291dd2943087e11471cd3ad9e03e468eeff155\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.1.1_48208319baeaa3489c3ee2d6bcca613734e46fc9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-config\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="ffc15e965a9e8c28f24455eedd4cac215c45d1fc">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-config-10.0.1_6527995f0cc8b12c2b71393668d9c37192fccf4a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="028f8255cb977b29cdffbfcf05caa0459686120c">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-drive-10.0.1_7877f03efd585ed52fc5977fcc1cef22e6d33062\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="0c68f88d14f59a6cbd24516c086f7ef4ce507a81">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_2da0d36c6cae127da90cf9df2c4acca7dac75c35\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager-api\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="b1df8fa3d372a27e4e969ce00b00689ee1eed031">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-api-10.0.1_24dd301337b77a182227da979bb42b68a86ea2a5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-messaging\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="4b17463c814bdc562fb0392fa3494063623a0904">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-messaging-10.0.1_caf9bde1751d6d93ad986bdb06a0c41cb43325f2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.firebase\firebase-appindexing\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="ae80d328a8548b4610ead6c624bab8c6a6984f5b">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-appindexing-10.0.1_9b1735e23654eea8f61b80857b4b6235fb6517c4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.1.1_53ba6af7772f22a369d28fe205f43fbf1857cfe0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-10.0.1_82ae1b26914a35021a616836cd1a2bc48e269402\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.1.1_1e190a63e7c46cd987be32656feba21efb0110bf\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-appindexing\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="ae80d328a8548b4610ead6c624bab8c6a6984f5b">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-appindexing-10.0.1_c86d492e943d8f1c1f632851fbe0f5444358bff6\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e96c6974cf924e7ee3b230e6847d5731423388c9">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-base-10.0.1_f488cd712841d81e5b4ca2b3c6070a80e6239fef\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.1.1_ee3d850b04fcc9133fa7266e6546a0fcd85c7cc8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="ba6aa5e69ef31dee57208125323cee958fc67565">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-vision-10.0.1_2985d1c4eda3f6dee240fc7eeb3e3e5711d2f7de\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c6e1f361e9d61aece9dac39b77fcc98a337a144d">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-nearby-10.0.1_92003d2d3e9facd30c8c99f38078f9c1e1b7ed45\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-10.0.1_6c06ba30b5e8f98b8cdb0967c34f9ae7b7f34729\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-10.0.1_94712d3e2e171164956f455bc18ececc508bee4a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\palette-v7\24.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-palette-v7-24.0.0_6bb129ec6375c5f0723b5a7a9926fb17670383a4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.1.1_4999c93640776b08d487dc8fdb779cc0c05dd682\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-awareness\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="4385ccc0a88b33d182a836eadb47be55c8eb1107">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-awareness-10.0.1_b860355f2bb448290a89f405f6e914f9379e463a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database-connection\10.0.1\jars\classes.jar"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database-connection\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-connection-10.0.1_4f590a4532d1ec5ca7b888f16aaaec832b89150e\classes.dex" />
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-connection-10.0.1_4a262f8bb55a52e0d0d218054e8fc75888b2a5c0\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.android.support\customtabs\25.0.0\jars\classes.jar"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="94ba691efc31bf53264db0716d9c9ec03843ea31">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-customtabs-25.0.0_a11d80b3921d7d6d663b65fbfee7f5b6cb2cd523\classes.dex" />
+        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-10.0.1_8bdcaed0d0b79348fab5f44006060efc62ac6372\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-clearcut\10.0.1\jars\classes.jar"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="1d193729baf37df3d902a423291423a0df7e3779">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-clearcut-10.0.1_9fea132b401f596255b818f5f56067322bcc44e0\classes.dex" />
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-10.0.1_8175984386ed17c2fbcfd7ae3253675252b46bf9\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.firebase\firebase-crash\10.0.1\jars\classes.jar"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="de29a39f9260f88151b1ef453140e71c76b6c415">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-crash-10.0.1_97fd4704e2f2a3da4a34c1d9c8a0e3f901a1c147\classes.dex" />
+        sha1="b955cb3a1ad6f1b6ff728ce1e0cd592c1717b440">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-lite-10.0.1_a3d2dc5435b55dce870a94f24f0a6bc44cac5032\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\24.0.0\jars\classes.jar"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager-api\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-mediarouter-v7-24.0.0_b51670462003ef27389ced30329dcc5219df0549\classes.dex" />
+        sha1="b1df8fa3d372a27e4e969ce00b00689ee1eed031">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-api-10.0.1_2789a50853a0a7ef908137c17780a392fc544784\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\10.0.1\jars\classes.jar"
+        jar="C:\Users\juanl\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="1e11c68fec92a17c84dd8d1dd80e74c4e67b12e2">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-games-10.0.1_85fd8efe386f8709b05644e4799f73ca520da139\classes.dex" />
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\bolts-applinks-1.4.0_181050ea67fefa9224ee881ff951380b93edaf4f\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.0.1_4510445868a1723d8609fe219f758db2e0dcb755\classes.dex" />
+        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.1.1_b9ed6638a0429a61a2f8f85e07648f398644e176\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-places\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f3e51e9c5233b8897f61e08a6a27bc36283c2724">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-places-10.0.1_d75db7600c342a18eb556864e93942ab82d24476\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="27777b3cad3c20b1acab19f6e37fe3e03371bf6e">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-maps-10.0.1_c9a27294c837f32388b49494c749aca1ecdb7bc5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="27777b3cad3c20b1acab19f6e37fe3e03371bf6e">
-        <dex dex="E:\Android_dev\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-maps-10.0.1_bcc6a1b8dbde54a0b2eca6b967bf37a5bee0cfb4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="dd39827d2067497e60e21da48a7926000b6d4b0c">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-10.0.1_775af7e3e17a36ec284cfea2bcebe522e0d1e705\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="1e11c68fec92a17c84dd8d1dd80e74c4e67b12e2">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-games-10.0.1_526e2ff4d1e246d247a488f26521cc48bee55b00\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database\10.0.1\jars\classes.jar"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
-        <dex dex="E:\Android_dev\ForeignFriend-copia_seguridad\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-10.0.1_aaff6aa4829915dd6395b1ab5e1b3a884eff3206\classes.dex" />
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-10.0.1_bb8dc4072ec57a5ed9aa685e1b3e9ffb4542bd4b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="1e11c68fec92a17c84dd8d1dd80e74c4e67b12e2">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-games-10.0.1_b5fcf0243880ddc12537b0a8dab23470efb93338\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="2d5d113b0352ab60946fc44c518cf68fd26cbb79">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wallet-10.0.1_1565b65b126faa39afe26a10a70caa69eef70de9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d0460bf07cc3657e0be518ca01c174493951c6b8">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-10.0.1_517ee674277b4911308d17767ba1dd0f7caf75ab\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f6cf557be4dbd0282ea2388633e5378634423226">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-safetynet-10.0.1_b0f5384f61c327a2201cc43077783168e8b48dda\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.0.1_0d9bcb5d93c56fd940783db792e13f0532f6db22\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-10.0.1_b94d5eb7a823397aa825938915220e62788a7ecb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.1_09ec6a70d1bd3bc1f93501dbc0c5b17420478892\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-awareness\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="4385ccc0a88b33d182a836eadb47be55c8eb1107">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-awareness-10.0.1_1415c8d60704efa1352c7e0bacc020efd8c6649b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gass\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="57c2eceb8548de84509d1ebc293fedec53231f6c">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gass-10.0.1_9eaa9c06569c9b55f8c0e35c95fe26caa595852e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\design\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.1.1_bcb6fa3bd4552ef21cd6dab64a88c7e3516ce69b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="dd39827d2067497e60e21da48a7926000b6d4b0c">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-10.0.1_84eed942ea098f2c9c4505c647b203b87961ea06\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-mediarouter-v7-24.0.0_d6a0aaaff93ee6757c20dbb67c5ccc3b245ae056\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c6e1f361e9d61aece9dac39b77fcc98a337a144d">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-nearby-10.0.1_c18f8d7e16ed1d259ecd9d015cd17692c50ddd89\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="ee57e8bce49669e11394d4b92eb09acb8c944c97">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_524b1c20678df2215f3d2bd77388f58b37b15627\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="771267c5b0c7a5b348d3205dcfa1f871af7e0177">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-10.0.1_279a244a60823d583c095c73153b0b3c8a1e2bf0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-places\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f3e51e9c5233b8897f61e08a6a27bc36283c2724">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-places-10.0.1_f0f0efaada9ec93069ee1e9f69da546e9f711535\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c14f0c89f28cf782e42581ab0aba5f63af39b3d2">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-plus-10.0.1_c5e1b52e640139d9a2b4234dabb13d70ed15b7ef\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-messaging\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="4b17463c814bdc562fb0392fa3494063623a0904">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-messaging-10.0.1_c05bfcc891b74f1375b072aa6089e101e21c618b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-10.0.1_26a903634713658c6f41268e29ce93b34155a6c7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="8a372c4191f80489770a231f7be4820b204b886a">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-25.0.0_9b70d3906d5fa1c054e3a36a88d7f8d74d8b0652\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="4c829ff0ccfecb28a999ee46d9e75948dfc777a4">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-10.0.1_1c3dcf415da524866577cee15a44fd28b276bfd4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.1.1_edb7279a8b78da41d5c46f1ae42c11d53a800b75\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-10.0.1_6d9726cfedb2166d25c99e4e78f2552389e0c019\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.1.1_27f29cb6dedc70a80c94caba84197dc6434f1201\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\palette-v7\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-palette-v7-24.0.0_04e2cdcca9c6cef068614d9829c1d1b1c07ff4b5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e2185aff89caeb337b1ffc36d5e525d8318e7cfe">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-10.0.1_0af8e24682bb771c90ad6ca04f9c605e7139bc24\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="39907d5c8f5902fffef30160ca7447c93b82405c">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appinvite-10.0.1_d69172fa51ddffe27f1eb0e2fc16a91b77f29149\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\bolts-tasks-1.4.0_929e7062dac9bf98433731e32d9ee28c6277dcc2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="7a64bf6dc775198eed9db9468a133adf7dfe6562">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-fitness-10.0.1_499feb32eb1218daaa7d0fc7f92b72c3763cd392\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-10.0.1_a747cd37cf6e05b7c129adc07a0c4ed88867ef3a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="44a694d4095be84c2888764b1f7256b385c030ad">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-location-10.0.1_35aaaba4b691514d70ed8275a0a8f9087254cc61\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.7_617c9f617120b93d6a5f60e1f067e66c84f5f82c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e96c6974cf924e7ee3b230e6847d5731423388c9">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-base-10.0.1_a3b688bdbd2fd8cba9735c4e301e69a901e2a8a5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="a48dc0b148059764d32500be558702d5ff932058">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-identity-10.0.1_d00160b395ee5be45513f1573e8cbd82807f32da\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.1.1_e6c301a3dce454dc530ee5a9227bd568b224dfa7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.1.1_5c759d049662fe45c46d8a76dc714204989a4d7c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="971509bbe30bb7b971fc1c49d7b23d0d818830ac">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-10.0.1_3b58c8d2d45178d3521ef57b93fb832c0f8e9e99\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="028f8255cb977b29cdffbfcf05caa0459686120c">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-drive-10.0.1_13ba654a57c79956884afc3a7cbe5345c7903310\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.1.1_6fb4ab715ce633abbb940d4a9a4fdd39f81a26ae\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\customtabs\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="94ba691efc31bf53264db0716d9c9ec03843ea31">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-customtabs-25.0.0_6291c287cbf7e2460d41e5ff1832cf6ecb94e578\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager-v4-impl\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f23ad0f8e58713ff4b55f61c0bbde3830378347c">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-v4-impl-10.0.1_f7f335a7b359c05626c9948d4ade03f13afc1794\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-appindexing\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="ae80d328a8548b4610ead6c624bab8c6a6984f5b">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-appindexing-10.0.1_8eaafa8ec4355fa1ca9874925d4d7341c47faf47\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics-impl\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e871881b36b32e6bfd271a830c6eeb54ff0fc185">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-impl-10.0.1_5bdd2cc67a5915963913f681a809db8cd12d4cb4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="ba6aa5e69ef31dee57208125323cee958fc67565">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-vision-10.0.1_ec0e167f90955a8a4b38188f960c4395c29ad1ee\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_21a899d541ebd71fd25617c46de1edfeead3291e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage-common\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="09cf6aa1390f95157e8295d02be7868f568825fc">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-common-10.0.1_6d3d4994e45aa23cbd462f6303a79c0d12053285\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.1.1_8e7db41820911546fa739dd02461aeabc6beb0bf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-clearcut\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="1d193729baf37df3d902a423291423a0df7e3779">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-clearcut-10.0.1_9990ee54308aeb81d07b722368613236a256a065\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\24.0.0\jars\libs\internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.0.0_bd1328250f9dd83891dda95d8a59461ed0921db7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="7fcc8ce7cc660da240130fe7e1064edb5e06af18">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_34273a7031b24591ba74ea506bf36f61c61e3c85\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.1.1_4c3907ae88d867308d7692c08c40e7f29a607969\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-config\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="ffc15e965a9e8c28f24455eedd4cac215c45d1fc">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-config-10.0.1_1c9445e859510586219955e552c20c7ec0cdf8e6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.1.1_16c7859ec2b18cecb822c7cb58fe8407f609b9ff\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="92c871a22463a247e8a77a9f3fd231c278788c4a">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-panorama-10.0.1_aec98cfed182152cb8a49dc3985120c1a196afbf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast-framework\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="df1cb17511aabbb63264a0024949d1e42502a512">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-framework-10.0.1_346a56548d8a68dee37479abba00c8ea963d3cd3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="408a599ac77cd17fe8e8919326bec617b3d005bd">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wearable-10.0.1_96e9d97c7370099cd1164f46692cbabc93652a82\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="6bb5d347ebc0c6ef3c83a905222a688da5d2f7b4">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-iid-10.0.1_4d8b371b4a5ee037b6c36acf8d3dd265ee4989ea\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="C:\Users\juanl\Documents\GitHub\ForeignFriendAppNewVersion\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-10.0.1_29114d5a4e65bb371ca5a3cc56a58f476283312d\classes.dex" />
     </item>
 
 </items>

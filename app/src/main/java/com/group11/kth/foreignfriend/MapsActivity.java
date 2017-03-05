@@ -93,8 +93,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     List<String> fieldsarray = Arrays.asList(getResources().getStringArray(R.array.fields));*/
     /*List<String> coursearray = new ArrayList<String>(Arrays.asList("ID001","ID002","ID003","ID004","ID005"));
     List<String> fieldsarray = new ArrayList<String>(Arrays.asList("IT","Math","Physics"));*/
-    List<String> coursearray = new ArrayList<String>(Arrays.asList("ID001"));
-    List<String> fieldsarray = new ArrayList<String>(Arrays.asList("Physics"));
+    List<String> coursearray = new ArrayList<String>(Arrays.asList("ID001","ID002"));
+    List<String> fieldsarray = new ArrayList<String>(Arrays.asList("Physics" ));
 
     private GoogleApiClient client;
     private LocationManager locationManager;
@@ -261,25 +261,35 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
+
         //Create listeners to the locations in the filters I am subscribed to
 
         final ChildEventListener filterListener = new ChildEventListener(){
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Marker m = mMap.addMarker(new MarkerOptions().position(parseLatLng(dataSnapshot)).title(dataSnapshot.getKey()));
-                existingMarkers.put(dataSnapshot.getKey(), m);
+                if (existingMarkers.containsKey(dataSnapshot.getKey())) {
+                    Marker existingMarker = existingMarkers.get(dataSnapshot.getKey());
+                    existingMarker.setPosition(parseLatLng(dataSnapshot));
+                } else {
+                    Marker newMarker = mMap.addMarker(new MarkerOptions()
+                            .position(parseLatLng(dataSnapshot))
+                            .title(dataSnapshot.getKey())
+                            .snippet(dataSnapshot.getValue().toString()));
+                    existingMarkers.put(dataSnapshot.getKey(), newMarker);
+                }
             }
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                Marker oldM = existingMarkers.get(dataSnapshot.getKey());
-                //MarkerOptions replaceMarker = new MarkerOptions().position(parseLatLng(dataSnapshot)).title(dataSnapshot.getKey());
-                Toast.makeText(MapsActivity.this, dataSnapshot.toString(), Toast.LENGTH_LONG).show();
-               oldM.setPosition(parseLatLng(dataSnapshot));
-                /*Marker newM = mMap.addMarker(replaceMarker);
-                oldM.remove();
-                existingMarkers.remove(dataSnapshot.getKey());
-                existingMarkers.put(dataSnapshot.getKey(),newM);*/
+                //MarkerOptions replaceMarker = new MarkerOptions().position(parseLatLng(dataSnapshot)).title(dataSnapshot.getKey()).snippet(dataSnapshot.getValue().toString());
+                Toast.makeText(MapsActivity.this, dataSnapshot.getKey()+ dataSnapshot.toString(), Toast.LENGTH_LONG).show();
+                oldM.setPosition(parseLatLng(dataSnapshot));
+                //Marker newM = mMap.addMarker(replaceMarker);
+                //oldM.remove();
+                //existingMarkers.remove(dataSnapshot.getKey());
+                //existingMarkers.put(dataSnapshot.getKey(),newM);
+
             }
 
             @Override
@@ -327,15 +337,50 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         };
 
+        //Downloads and plots the info of all the current users in a course
+
+        ValueEventListener downloadMarkers = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                //Toast.makeText(MapsActivity.this, dataSnapshot.toString(), Toast.LENGTH_LONG).show();
+              for (DataSnapshot child : dataSnapshot.getChildren()){
+
+                  if (existingMarkers.containsKey(child.getKey())) {
+                      Log.e("existingMarkers",existingMarkers.toString());
+                      Log.e("thisMarkerkey",existingMarkers.get(child.getKey()).toString());
+                      Marker existingMarker = existingMarkers.get(child.getKey());
+                      existingMarker.setPosition(parseLatLng(child));
+                  } else {
+                      Marker newMarker = mMap.addMarker(new MarkerOptions()
+                              .position(parseLatLng(child))
+                              .title(child.getKey())
+                              .snippet(child.getValue().toString()));
+                      existingMarkers.put(child.getKey(), newMarker);
+                      Log.e("newMarker",newMarker.getTitle() + newMarker.getPosition().toString());
+                  }
+                 //Toast.makeText(MapsActivity.this, child.getKey()+ child.toString(), Toast.LENGTH_LONG).show();
+              }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+
+        Log.e("existingMarkers before",existingMarkers.toString());
             //creates a listener to every course and field in which one is subscribed
         for ( String course : coursearray){
-            filtersRef.child(course).addChildEventListener(filterListener);
+            //Toast.makeText(MapsActivity.this, course, Toast.LENGTH_LONG).show();
+            filtersRef.child("courses").child(course).addListenerForSingleValueEvent(downloadMarkers); //downloads the locations of all the current users in a course
+            filtersRef.child("courses").child(course).addChildEventListener(filterListener);
         }
         for ( String field : fieldsarray){
-            filtersRef.child(field).addChildEventListener(filterListener);
+            filtersRef.child("fields").child(field).addListenerForSingleValueEvent(downloadMarkers); //downloads the locations of all the current users in a field
+            filtersRef.child("fields").child(field).addChildEventListener(filterListener);
         }
-       userRef.child("filters/courses").addChildEventListener(my_own_filters_listener);
-       userRef.child("filters/fields").addChildEventListener(my_own_filters_listener);
+       //userRef.child("filters/courses").addChildEventListener(my_own_filters_listener);
+       //userRef.child("filters/fields").addChildEventListener(my_own_filters_listener);
 
 
 
@@ -349,12 +394,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
     public LatLng parseLatLng(DataSnapshot dataSnapShot){
         //String[] latlong = dataSnapShot.getValue().toString().split(",");
+        Object o =  dataSnapShot.child("latitude").getValue();
+        Log.e("type of value", o.getClass().getName());
         double latitude = (double) dataSnapShot.child("latitude").getValue();
         double longitude = (double) dataSnapShot.child("longitude").getValue();
         LatLng latlng = new LatLng(latitude, longitude);
         return latlng;
     }
-
+//riend E/UncaughtException: java.lang.ClassCastException: java.lang.Double cannot be cast to java.lang.Long
+    //java.lang.ClassCastException: java.lang.Long cannot be cast to java.lang.Double
 
 
 
@@ -441,7 +489,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public boolean onMarkerClick(Marker marker) {
         // to be detailed
         Intent intent = new Intent(this, StudentOnlineActivity.class);
-        startActivity(intent);
+        //startActivity(intent);
         return false;
     }
 
