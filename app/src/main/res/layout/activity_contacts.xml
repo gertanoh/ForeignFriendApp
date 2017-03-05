@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/user_profile_name"
             android:layout_toRightOf="@+id/user_profile_picture"
-            android:hint="I would like to be contacted by Facebook/Whatsapp"
+            android:hint=""
             android:textSize="20dp"
             android:textStyle="italic"
             android:layout_marginLeft="10dp"
@@ -126,8 +126,9 @@
             android:textStyle="italic"/>
 
         <Button
-            android:background="#9e7c4646"
+            android:background="#d4f9f7"
             android:elevation="5dp"
+            android:padding="10dp"
             android:text="EDIT"
             android:textAlignment="center"
             android:layout_width="wrap_content"
@@ -139,8 +140,9 @@
             android:layout_marginLeft="50dp"
             />
         <Button
-            android:background="#9e7c4646"
+            android:background="#d4f9f7"
             android:elevation="5dp"
+            android:padding="10dp"
             android:text="DONE"
             android:textAlignment="center"
             android:layout_width="wrap_content"

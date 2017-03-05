@@ -43,7 +43,9 @@ public class FilterActivity extends AppCompatActivity {
     String[]fieldsarray;
     boolean[] checkedfields;
     ArrayList<Integer>fieldslist = new ArrayList<>();
-    public SharedPreferences sharedPref;
+
+    public SharedPreferences sharedPref;            // henrys ...
+    SharedPreferences mPref;                        // Juans ...
 
 
     // Make these static to keep the value
@@ -58,10 +60,12 @@ public class FilterActivity extends AppCompatActivity {
 
         sharedPref = this.getSharedPreferences(getString(R.string.user_log_status_file), Context.MODE_PRIVATE);
 
+        //sharedPref2 = this.getSharedPreferences(getString(R.string., Context.MODE_PRIVATE);
+
         final String id = sharedPref.getString(getString(R.string.user_id), "NoFacebookID");
+
         final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
 
-        SharedPreferences  mPrefs;
 
         setContentView(R.layout.activity_filter);
 
@@ -482,7 +486,20 @@ public class FilterActivity extends AppCompatActivity {
 
     public String getUserLat(){
 
-        return "latitude";
+        //sharedPref  = this.getSharedPreferences(getString(R.string.user_log_status_file), Context.MODE_PRIVATE);
+       // sharedPref2 = this.getSharedPreferences("location", Context.MODE_PRIVATE);
+
+       // String id = sharedPref.getString(getString(R.string.user_fb_id),"hej");
+       // String name = sharedPref.getString(getString(R.string.user_name),"Name");
+
+        String uid = sharedPref.getString(getString(R.string.user_name), "hej");
+        String location = sharedPref.getString("location", "nope");
+
+        //String teststring = name;
+
+        //mPref = this.getSharedPreferences(, "hej");
+
+        return location;
     }
 
     public String getUserLong(){
