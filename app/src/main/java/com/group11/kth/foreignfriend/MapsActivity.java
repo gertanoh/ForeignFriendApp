@@ -77,6 +77,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -116,6 +117,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private LocationRequest locationRequest;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     HashMap<String, Marker> existingMarkers = new HashMap<String, Marker>();
+    HashMap<String, ArrayList<String>> studentsFilters = new HashMap<String, ArrayList<String>>();
     // Update userid to real Facebook user id
     // String userId = "juanluisrto";
     String userId;
@@ -127,6 +129,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     DatabaseReference userRef;
     DatabaseReference filtersRef = database.getReference("filters/");
     DatabaseReference locationsRef = database.getReference("location/");
+    DatabaseReference rootRef = database.getReference();
 
     SharedPreferences mPrefs;
 
@@ -271,9 +274,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         final ChildEventListener filterListener = new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Toast.makeText(getApplicationContext(),"get filters calling", Toast.LENGTH_LONG).show();
+
+                boolean match = true; // getFilters(dataSnapshot.getKey());
                 if (existingMarkers.containsKey(dataSnapshot.getKey())) {
                     Marker existingMarker = existingMarkers.get(dataSnapshot.getKey());
                     existingMarker.setPosition(parseLatLng(dataSnapshot));
+                    existingMarker.setVisible(match);
                     existingMarker.setTag(dataSnapshot.getKey());
 
                 } else {
@@ -283,20 +290,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             .title((String) dataSnapshot.child(getString(R.string.Name)).getValue()));
                     //.snippet(dataSnapshot.getValue().toString()));
                     newMarker.setTag(dataSnapshot.getKey());
+                    newMarker.setVisible(match);
                     existingMarkers.put(dataSnapshot.getKey(), newMarker);
+
                 }
+
+                //Toast.makeText(MapsActivity.this,dataSnapshot.child("filters").getValue().toString(), Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                boolean match = true; //getFilters(dataSnapshot.getKey());
                 Marker oldM = existingMarkers.get(dataSnapshot.getKey());
                 //MarkerOptions replaceMarker = new MarkerOptions().position(parseLatLng(dataSnapshot)).title(dataSnapshot.getKey()).snippet(dataSnapshot.getValue().toString());
                 //  Toast.makeText(MapsActivity.this, dataSnapshot.getKey() + dataSnapshot.toString(), Toast.LENGTH_LONG).show();
                 oldM.setPosition(parseLatLng(dataSnapshot));
+                oldM.setVisible(match);
                 //Marker newM = mMap.addMarker(replaceMarker);
                 //oldM.remove();
                 //existingMarkers.remove(dataSnapshot.getKey());
                 //existingMarkers.put(dataSnapshot.getKey(),newM);
+                //Toast.makeText(MapsActivity.this,dataSnapshot.child("filters").getValue().toString(), Toast.LENGTH_LONG).show();
 
             }
 
@@ -356,6 +370,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         };
 
 
+
+
         //Downloads and plots the info of all the current users in a course
 
         ValueEventListener downloadMarkers = new ValueEventListener() {
@@ -405,6 +421,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             }
         };
+
       /*  //adds courses and filters from the database to the arrays
         userRef.child("filters/courses").addListenerForSingleValueEvent(downloadFilters);
         userRef.child("filters/fields").addListenerForSingleValueEvent(downloadFilters);
@@ -426,6 +443,63 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         locationsRef.addChildEventListener(filterListener);
 
     }
+
+
+   public  Boolean  getFilters(String studentId){
+       Toast.makeText(getApplicationContext(),"start", Toast.LENGTH_LONG).show();
+       Toast.makeText(getApplicationContext(),"id :"+studentId, Toast.LENGTH_LONG).show();
+       final boolean[] test = {false};
+       final ArrayList<String> studentFilters = new ArrayList<String>();
+       rootRef.child("Users/" + studentId +"filters").addListenerForSingleValueEvent( new ValueEventListener() {
+           @Override
+           public void onDataChange(DataSnapshot dataSnapshot) {
+               Toast.makeText(getApplicationContext(),"on daata chnage", Toast.LENGTH_LONG).show();
+               for (DataSnapshot course : dataSnapshot.child("courses").getChildren()) {
+                   studentFilters.add(course.getValue().toString());
+               }
+               for (DataSnapshot course : dataSnapshot.child("fields").getChildren()) {
+                   studentFilters.add(course.getValue().toString());
+               }
+
+             //  int c = (int) dataSnapshot.child("test").getValue();
+               //if (c == 1)
+               //    test[0] = true;
+           }
+           @Override
+           public void onCancelled(DatabaseError databaseError) {
+           }
+       });
+       final ArrayList<String> myFilters = new ArrayList<String>();
+       rootRef.child("Users/" + userId +"filters").addListenerForSingleValueEvent( new ValueEventListener() {
+           @Override
+           public void onDataChange(DataSnapshot dataSnapshot) {
+               for (DataSnapshot course : dataSnapshot.child("courses").getChildren()) {
+                   String s = course.getValue().toString();
+                   Toast.makeText(getApplicationContext()," value :"+s, Toast.LENGTH_LONG).show();
+                   myFilters.add(s);
+               }
+               for (DataSnapshot course : dataSnapshot.child("fields").getChildren()) {
+                   myFilters.add(course.getValue().toString());
+               }
+
+           }
+           @Override
+           public void onCancelled(DatabaseError databaseError) {
+           }
+       });
+
+       int before = myFilters.size();
+       myFilters.removeAll(studentFilters);
+       int after = myFilters.size();
+       boolean match = false;
+
+       if (before!=after){
+           match = true;
+       }
+
+       return false;
+   }
+
 
 
     protected void startLocationUpdates() {
@@ -519,7 +593,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SharedPreferences.Editor editor = mPrefs.edit();
 
 
-        Toast.makeText(this, "Update Location Toast", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Update Location Toast", Toast.LENGTH_SHORT).show();
         editor.putString(getString(R.string.latitude), String.valueOf(latLng.latitude));
         editor.putString(getString(R.string.longitude), String.valueOf(latLng.longitude));
         //  Toast.makeText(this, "Location Update", Toast.LENGTH_LONG).show();
@@ -599,7 +673,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 16);
         mMap.animateCamera(cameraUpdate);
         updateLocation(latLng);
-        Toast.makeText(MapsActivity.this, "userID: " + userId , Toast.LENGTH_SHORT).show();
     }
 
     @Override

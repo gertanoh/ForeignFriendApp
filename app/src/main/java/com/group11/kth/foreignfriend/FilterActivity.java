@@ -130,6 +130,10 @@ public class FilterActivity extends AppCompatActivity {
 
                 mRootRef.child("Users").child(id).child("filters").child("fields").updateChildren(fieldsmap);
                 mRootRef.child("Users").child(id).child("filters").child("courses").updateChildren(coursemap);
+                HashMap<String,Object> allFilters = new HashMap<String, Object>();
+                allFilters.putAll(fieldsmap);
+                allFilters.putAll(coursemap);
+                mRootRef.child("allFilters/"+ id).updateChildren(allFilters);
 
 
 
