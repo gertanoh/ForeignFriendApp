@@ -149,11 +149,11 @@ public class LoginActivity extends AppCompatActivity {
                             old_id = sharedPref.getString(getString(R.string.user_id), "null");
                             editor.commit();
 
-                            Toast.makeText(LoginActivity.this, "id:"+id, Toast.LENGTH_LONG).show();
-                            Toast.makeText(LoginActivity.this, "old id"+old_id, Toast.LENGTH_LONG).show();
+                          //  Toast.makeText(LoginActivity.this, "id:"+id, Toast.LENGTH_LONG).show();
+                            //Toast.makeText(LoginActivity.this, "old id"+old_id, Toast.LENGTH_LONG).show();
 
                             if(!(id.equals(old_id))){
-                                Toast.makeText(LoginActivity.this, "INSIDE IF-STATEMENt, NEW USER", Toast.LENGTH_LONG).show();
+                              //  Toast.makeText(LoginActivity.this, "INSIDE IF-STATEMENt, NEW USER", Toast.LENGTH_LONG).show();
 
                                 rootRef.child(getString(R.string.Users)).child(id).child(getString(R.string.Phone)).setValue("");
                                 rootRef.child(getString(R.string.Users)).child(id).child(getString(R.string.Whatsapp)).setValue("");

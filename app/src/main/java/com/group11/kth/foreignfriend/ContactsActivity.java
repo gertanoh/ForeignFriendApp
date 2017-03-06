@@ -55,7 +55,7 @@ public class ContactsActivity extends AppCompatActivity implements View.OnClickL
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         tPhone.setText((String)dataSnapshot.getValue());
-                        Toast.makeText(getApplicationContext(), "CONTACTS ACTIVITY", Toast.LENGTH_LONG).show();
+                       // Toast.makeText(getApplicationContext(), "CONTACTS ACTIVITY", Toast.LENGTH_LONG).show();
                     }
 
                     @Override

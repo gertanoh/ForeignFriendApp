@@ -19,6 +19,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.accessibility.AccessibilityManagerCompat;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -140,9 +141,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
         client.connect();
-
         //Saving location locally to use between activities
-        mPrefs = this.getSharedPreferences("location", Context.MODE_PRIVATE);
+        mPrefs = this.getSharedPreferences(getString(R.string.user_log_status_file), Context.MODE_PRIVATE);
 
 
         //Bottom navigation View
@@ -171,13 +171,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
-        if (mGoogleApiClient == null) {
+      /*  if (mGoogleApiClient == null) {
             mGoogleApiClient = new GoogleApiClient.Builder(this)
                     .addConnectionCallbacks(this)
                     .addOnConnectionFailedListener(this)
                     .addApi(LocationServices.API)
                     .build();
-        }
+        }*/
     }
 
 
@@ -243,7 +243,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION},
                     MY_PERMISSIONS_REQUEST_LOCATION);
 
-            Toast.makeText(this, "Location not working", Toast.LENGTH_LONG).show();
+         //   Toast.makeText(this, "Location not working", Toast.LENGTH_LONG).show();
+            Log.d("Location :", "Location not working ");
         }
 
 
@@ -305,7 +306,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                 Marker oldM = existingMarkers.get(dataSnapshot.getKey());
                 //MarkerOptions replaceMarker = new MarkerOptions().position(parseLatLng(dataSnapshot)).title(dataSnapshot.getKey()).snippet(dataSnapshot.getValue().toString());
-                Toast.makeText(MapsActivity.this, dataSnapshot.getKey() + dataSnapshot.toString(), Toast.LENGTH_LONG).show();
+              //  Toast.makeText(MapsActivity.this, dataSnapshot.getKey() + dataSnapshot.toString(), Toast.LENGTH_LONG).show();
                 oldM.setPosition(parseLatLng(dataSnapshot));
                 //Marker newM = mMap.addMarker(replaceMarker);
                 //oldM.remove();
@@ -446,7 +447,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
 
-        mGoogleApiClient.connect(); //location connected
+       // mGoogleApiClient.connect(); //location connected
         client.connect();
         AppIndex.AppIndexApi.start(client, getIndexApiAction());
     }
@@ -483,9 +484,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         String json = gson.toJson(latLng);
         editor.putString("location", json);*/
 
+       // Toast.makeText(this, "Update Location Toast", Toast.LENGTH_SHORT).show();
         editor.putString(getString(R.string.latitude), String.valueOf(latLng.latitude));
         editor.putString(getString(R.string.longitude), String.valueOf(latLng.longitude));
-        Toast.makeText(this, "Location Update", Toast.LENGTH_LONG).show();
+      //  Toast.makeText(this, "Location Update", Toast.LENGTH_LONG).show();
         editor.commit();
 
 
@@ -519,25 +521,30 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
     @Override
-    public void onConnected(@Nullable Bundle connectionHint) {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            Toast.makeText(this, "permissions refused ", Toast.LENGTH_LONG).show();
-            return;
-        }
-        Location mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
-                mGoogleApiClient);
-        if (mLastLocation != null) {
-            Double latitude = mLastLocation.getLatitude();
-            Double longitude = mLastLocation.getLongitude();
-            Toast.makeText(this, "Lattitude :"+ latitude, Toast.LENGTH_LONG).show();
-            Toast.makeText(this, "Lattitude :"+ longitude, Toast.LENGTH_LONG).show();
-            SharedPreferences.Editor editor = mPrefs.edit();
-            editor.putString(getString(R.string.latitude), String.valueOf(latitude));
-            editor.putString(getString(R.string.longitude), String.valueOf(longitude));
-            editor.commit();
-        }
+    public void onConnected(@Nullable Bundle bundle) {
+
     }
 
+    /*  @Override
+        public void onConnected(@Nullable Bundle connectionHint) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "permissions refused ", Toast.LENGTH_LONG).show();
+                return;
+            }
+            Location mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
+                    mGoogleApiClient);
+            if (mLastLocation != null) {
+                Double latitude = mLastLocation.getLatitude();
+                Double longitude = mLastLocation.getLongitude();
+                Toast.makeText(this, "Lattitude :"+ latitude, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Lattitude :"+ longitude, Toast.LENGTH_LONG).show();
+                SharedPreferences.Editor editor = mPrefs.edit();
+                editor.putString(getString(R.string.latitude), String.valueOf(latitude));
+                editor.putString(getString(R.string.longitude), String.valueOf(longitude));
+                editor.commit();
+            }
+        }
+    */
     @Override
     public void onConnectionSuspended(int i) {
 
@@ -545,7 +552,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        Toast.makeText(this, "Connection Failed", Toast.LENGTH_LONG).show();
+      //  Toast.makeText(this, "Connection Failed", Toast.LENGTH_LONG).show();
 
     }
 }

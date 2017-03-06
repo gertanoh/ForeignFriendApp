@@ -322,11 +322,11 @@ public class FilterActivity extends AppCompatActivity {
 
                         // Remove old subscriptions to fields
 
-                        rootRef.child("_filters").child("fields").child("Math").child(id).removeValue();
-                        rootRef.child("_filters").child("fields").child("Physics").child(id).removeValue();
-                        rootRef.child("_filters").child("fields").child("Chemistry").child(id).removeValue();
-                        rootRef.child("_filters").child("fields").child("Business").child(id).removeValue();
-                        rootRef.child("_filters").child("fields").child("IT").child(id).removeValue();
+                        rootRef.child("filters").child("fields").child("Math").child(id).removeValue();
+                        rootRef.child("filters").child("fields").child("Physics").child(id).removeValue();
+                        rootRef.child("filters").child("fields").child("Chemistry").child(id).removeValue();
+                        rootRef.child("filters").child("fields").child("Business").child(id).removeValue();
+                        rootRef.child("filters").child("fields").child("IT").child(id).removeValue();
 
 
                         for (int i=0;i< fieldslist.size(); i++){
@@ -336,8 +336,8 @@ public class FilterActivity extends AppCompatActivity {
                             fieldsmap.put(fieldsarray[fieldslist.get(i)], true); // update new ones
 
                             // subscribe user to fields
-                            rootRef.child("_filters").child("fields").child(fieldsarray[fieldslist.get(i)]).child(id).child("latitude").setValue(getUserLat());
-                            rootRef.child("_filters").child("fields").child(fieldsarray[fieldslist.get(i)]).child(id).child("longitude").setValue(getUserLong());
+                            rootRef.child("filters").child("fields").child(fieldsarray[fieldslist.get(i)]).child(id).child("latitude").setValue(getUserLat());
+                            rootRef.child("filters").child("fields").child(fieldsarray[fieldslist.get(i)]).child(id).child("longitude").setValue(getUserLong());
 
 
                         }
