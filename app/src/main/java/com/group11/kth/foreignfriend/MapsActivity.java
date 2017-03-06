@@ -13,6 +13,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
@@ -34,8 +35,10 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.cast.Cast;
+import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.games.multiplayer.turnbased.TurnBasedMultiplayer;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -45,6 +48,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.TileOverlay;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -64,6 +68,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
+
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -82,36 +87,37 @@ import java.util.List;
 import java.util.Map;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener,
-        GoogleMap.OnMarkerClickListener{
+        GoogleMap.OnMarkerClickListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     public GoogleMap mMap;
 
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
 
-   /* List<String> coursearray = Arrays.asList(getResources().getStringArray(R.array.courses);
-    List<String> fieldsarray = Arrays.asList(getResources().getStringArray(R.array.fields));*/
+    /* List<String> coursearray = Arrays.asList(getResources().getStringArray(R.array.courses);
+     List<String> fieldsarray = Arrays.asList(getResources().getStringArray(R.array.fields));*/
     /*List<String> coursearray = new ArrayList<String>(Arrays.asList("ID001","ID002","ID003","ID004","ID005"));
     List<String> fieldsarray = new ArrayList<String>(Arrays.asList("IT","Math","Physics"));*/
-    List<String> coursearray = new ArrayList<String>(Arrays.asList("ID001","ID002"));
-    List<String> fieldsarray = new ArrayList<String>(Arrays.asList("Physics" ));
+    List<String> coursearray = new ArrayList<String>(Arrays.asList("ID001", "ID002"));
+    List<String> fieldsarray = new ArrayList<String>(Arrays.asList("Physics"));
 
     private GoogleApiClient client;
     private LocationManager locationManager;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    HashMap<String,Marker> existingMarkers = new HashMap<String, Marker>();
+    HashMap<String, Marker> existingMarkers = new HashMap<String, Marker>();
     // Update userid to real Facebook user id
-   // String userId = "juanluisrto";
+    // String userId = "juanluisrto";
     String userId;
     String name_user;
     private static final long MIN_TIME = 400;
     private static final float MIN_DISTANCE = 5;
 
+    public GoogleApiClient mGoogleApiClient; //locationClient
 
     DatabaseReference userRef;
     DatabaseReference filtersRef = database.getReference("filters/");
 
-     SharedPreferences  mPrefs;
+    SharedPreferences mPrefs;
 
 
     @Override
@@ -119,12 +125,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
 
         /* set real user id*/
-        mPrefs  = this.getSharedPreferences(getString(R.string.user_log_status_file), Context.MODE_PRIVATE);
+        mPrefs = this.getSharedPreferences(getString(R.string.user_log_status_file), Context.MODE_PRIVATE);
 
-        userId = mPrefs.getString(getString(R.string.user_id),"null");
-        userRef = database.getReference(getString(R.string.Users)+"/" + userId);
+        userId = mPrefs.getString(getString(R.string.user_id), "null");
+        userRef = database.getReference(getString(R.string.Users) + "/" + userId);
         /* get name */
-        name_user = mPrefs.getString(getString(R.string.Name),"null");
+        name_user = mPrefs.getString(getString(R.string.Name), "null");
         setContentView(R.layout.activity_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -136,7 +142,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         client.connect();
 
         //Saving location locally to use between activities
-        mPrefs = this.getSharedPreferences("location",Context.MODE_PRIVATE);
+        mPrefs = this.getSharedPreferences("location", Context.MODE_PRIVATE);
 
 
         //Bottom navigation View
@@ -165,9 +171,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
-
+        if (mGoogleApiClient == null) {
+            mGoogleApiClient = new GoogleApiClient.Builder(this)
+                    .addConnectionCallbacks(this)
+                    .addOnConnectionFailedListener(this)
+                    .addApi(LocationServices.API)
+                    .build();
+        }
     }
-
 
 
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
@@ -180,6 +191,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         }
     }
+
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -193,7 +205,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(final GoogleMap googleMap) {
         mMap = googleMap;
         mMap.setOnMarkerClickListener((GoogleMap.OnMarkerClickListener) this);
-
 
 
         //...............................................
@@ -224,7 +235,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
-            ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             mMap.setMyLocationEnabled(true);
 
         } else {
@@ -234,8 +245,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             Toast.makeText(this, "Location not working", Toast.LENGTH_LONG).show();
         }
-
-
 
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -255,7 +264,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
 
             @Override
-            public void onStatusChanged(String provider, int status, Bundle extras){
+            public void onStatusChanged(String provider, int status, Bundle extras) {
             }
 
             @Override
@@ -268,14 +277,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         };
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,MIN_TIME,MIN_DISTANCE,ll);
-
-
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME, MIN_DISTANCE, ll);
 
 
         //Create listeners to the locations in the filters I am subscribed to
 
-        final ChildEventListener filterListener = new ChildEventListener(){
+        final ChildEventListener filterListener = new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 if (existingMarkers.containsKey(dataSnapshot.getKey())) {
@@ -288,7 +295,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     Marker newMarker = mMap.addMarker(new MarkerOptions()
                             .position(parseLatLng(dataSnapshot))
                             .title((String) dataSnapshot.child(getString(R.string.Name)).getValue()));
-                            //.snippet(dataSnapshot.getValue().toString()));
+                    //.snippet(dataSnapshot.getValue().toString()));
                     newMarker.setTag(dataSnapshot.getKey());
                     existingMarkers.put(dataSnapshot.getKey(), newMarker);
                 }
@@ -296,9 +303,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-               Marker oldM = existingMarkers.get(dataSnapshot.getKey());
+                Marker oldM = existingMarkers.get(dataSnapshot.getKey());
                 //MarkerOptions replaceMarker = new MarkerOptions().position(parseLatLng(dataSnapshot)).title(dataSnapshot.getKey()).snippet(dataSnapshot.getValue().toString());
-                Toast.makeText(MapsActivity.this, dataSnapshot.getKey()+ dataSnapshot.toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MapsActivity.this, dataSnapshot.getKey() + dataSnapshot.toString(), Toast.LENGTH_LONG).show();
                 oldM.setPosition(parseLatLng(dataSnapshot));
                 //Marker newM = mMap.addMarker(replaceMarker);
                 //oldM.remove();
@@ -358,25 +365,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 //Toast.makeText(MapsActivity.this, dataSnapshot.toString(), Toast.LENGTH_LONG).show();
-              for (DataSnapshot child : dataSnapshot.getChildren()){
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
 
-                  if (existingMarkers.containsKey(child.getKey())) {
-                      Log.e("existingMarkers",existingMarkers.toString());
-                      Log.e("thisMarkerkey",existingMarkers.get(child.getKey()).toString());
-                      Marker existingMarker = existingMarkers.get(child.getKey());
-                      existingMarker.setPosition(parseLatLng(child));
-                      existingMarker.setTag(child.getKey());
-                  } else {
-                      Marker newMarker = mMap.addMarker(new MarkerOptions()
-                              .position(parseLatLng(child))
-                              .title((String) child.child(getString(R.string.Name)).getValue()));
-                      newMarker.setTag(child.getKey());
-                              //.snippet(child.getValue().toString()));
-                      existingMarkers.put(child.getKey(), newMarker);
-                      Log.e("newMarker",newMarker.getTitle() + newMarker.getPosition().toString());
-                  }
-                 //Toast.makeText(MapsActivity.this, child.getKey()+ child.toString(), Toast.LENGTH_LONG).show();
-              }
+                    if (existingMarkers.containsKey(child.getKey())) {
+                        Log.e("existingMarkers", existingMarkers.toString());
+                        Log.e("thisMarkerkey", existingMarkers.get(child.getKey()).toString());
+                        Marker existingMarker = existingMarkers.get(child.getKey());
+                        existingMarker.setPosition(parseLatLng(child));
+                        existingMarker.setTag(child.getKey());
+                    } else {
+                        Marker newMarker = mMap.addMarker(new MarkerOptions()
+                                .position(parseLatLng(child))
+                                .title((String) child.child(getString(R.string.Name)).getValue()));
+                        newMarker.setTag(child.getKey());
+                        //.snippet(child.getValue().toString()));
+                        existingMarkers.put(child.getKey(), newMarker);
+                        Log.e("newMarker", newMarker.getTitle() + newMarker.getPosition().toString());
+                    }
+                    //Toast.makeText(MapsActivity.this, child.getKey()+ child.toString(), Toast.LENGTH_LONG).show();
+                }
             }
 
             @Override
@@ -385,33 +392,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         };
 
-        Log.e("existingMarkers before",existingMarkers.toString());
-            //creates a listener to every course and field in which one is subscribed
-        for ( String course : coursearray){
+        Log.e("existingMarkers before", existingMarkers.toString());
+        //creates a listener to every course and field in which one is subscribed
+        for (String course : coursearray) {
             //Toast.makeText(MapsActivity.this, course, Toast.LENGTH_LONG).show();
             filtersRef.child("courses").child(course).addListenerForSingleValueEvent(downloadMarkers); //downloads the locations of all the current users in a course
             filtersRef.child("courses").child(course).addChildEventListener(filterListener);
         }
-        for ( String field : fieldsarray){
+        for (String field : fieldsarray) {
             filtersRef.child("fields").child(field).addListenerForSingleValueEvent(downloadMarkers); //downloads the locations of all the current users in a field
             filtersRef.child("fields").child(field).addChildEventListener(filterListener);
         }
-       //userRef.child("filters/courses").addChildEventListener(my_own_filters_listener);
-       //userRef.child("filters/fields").addChildEventListener(my_own_filters_listener);
-
-
-
-
-
-
-
-
+        //userRef.child("filters/courses").addChildEventListener(my_own_filters_listener);
+        //userRef.child("filters/fields").addChildEventListener(my_own_filters_listener);
 
 
     }
-    public LatLng parseLatLng(DataSnapshot dataSnapShot){
+
+    public LatLng parseLatLng(DataSnapshot dataSnapShot) {
         //String[] latlong = dataSnapShot.getValue().toString().split(",");
-        Object o =  dataSnapShot.child("latitude").getValue();
+        Object o = dataSnapShot.child("latitude").getValue();
         Log.e("type of value", o.getClass().getName());
         double latitude = (double) dataSnapShot.child("latitude").getValue();
         double longitude = (double) dataSnapShot.child("longitude").getValue();
@@ -420,8 +420,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 //riend E/UncaughtException: java.lang.ClassCastException: java.lang.Double cannot be cast to java.lang.Long
     //java.lang.ClassCastException: java.lang.Long cannot be cast to java.lang.Double
-
-
 
 
     /**
@@ -442,10 +440,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onStart() {
+
         super.onStart();
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
+
+        mGoogleApiClient.connect(); //location connected
         client.connect();
         AppIndex.AppIndexApi.start(client, getIndexApiAction());
     }
@@ -464,6 +465,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
+
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.filter:
@@ -474,32 +476,32 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
-    void updateLocation(LatLng latLng){
+    void updateLocation(LatLng latLng) {
 
         SharedPreferences.Editor editor = mPrefs.edit();
-        Gson gson = new Gson();
+        /*Gson gson = new Gson();
         String json = gson.toJson(latLng);
-        editor.putString("location", json);
+        editor.putString("location", json);*/
+
+        editor.putString(getString(R.string.latitude), String.valueOf(latLng.latitude));
+        editor.putString(getString(R.string.longitude), String.valueOf(latLng.longitude));
+        Toast.makeText(this, "Location Update", Toast.LENGTH_LONG).show();
         editor.commit();
 
 
-
-       userRef.child("location").setValue(latLng);
+        userRef.child("location").setValue(latLng);
 
         Map<String, Object> filterUpdates = new HashMap<String, Object>();
-        for (String ftoAdd :fieldsarray) {
+        for (String ftoAdd : fieldsarray) {
             filterUpdates.put("fields/" + ftoAdd + "/" + userId, latLng);
         }
-        for (String ctoAdd :coursearray){
+        for (String ctoAdd : coursearray) {
             filterUpdates.put("courses/" + ctoAdd + "/" + userId, latLng);
         }
 
         filtersRef.updateChildren(filterUpdates); //updates the value of my location in every course adn field I am subscribed to
 
-   }
-
-
-
+    }
 
 
     @Override
@@ -509,12 +511,41 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // send userId
 
         String studentId = (String) marker.getTag();//"10154392139174033";
-        Log.d("tag",studentId);
-        intent.putExtra(getString(R.string.student_online_id),studentId);
+        Log.d("tag", studentId);
+        intent.putExtra(getString(R.string.student_online_id), studentId);
         startActivity(intent);
         return false;
     }
 
 
+    @Override
+    public void onConnected(@Nullable Bundle connectionHint) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(this, "permissions refused ", Toast.LENGTH_LONG).show();
+            return;
+        }
+        Location mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
+                mGoogleApiClient);
+        if (mLastLocation != null) {
+            Double latitude = mLastLocation.getLatitude();
+            Double longitude = mLastLocation.getLongitude();
+            Toast.makeText(this, "Lattitude :"+ latitude, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Lattitude :"+ longitude, Toast.LENGTH_LONG).show();
+            SharedPreferences.Editor editor = mPrefs.edit();
+            editor.putString(getString(R.string.latitude), String.valueOf(latitude));
+            editor.putString(getString(R.string.longitude), String.valueOf(longitude));
+            editor.commit();
+        }
+    }
 
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+        Toast.makeText(this, "Connection Failed", Toast.LENGTH_LONG).show();
+
+    }
 }

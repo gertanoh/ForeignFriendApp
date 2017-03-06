@@ -146,4 +146,7 @@
 
     <!-- strings related to student online -->
     <string name="student_online_id">student_online_id</string>
+
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
 </resources>

@@ -14,8 +14,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -439,8 +441,8 @@ public class FilterActivity extends AppCompatActivity {
 
 
                             // subscribe user to courses
-                            rootRef.child("_filters").child("courses").child(coursearray[courselist.get(i)]).child(id).child("latitude").setValue(getUserLat());
-                            rootRef.child("_filters").child("courses").child(coursearray[courselist.get(i)]).child(id).child("longitude").setValue(getUserLong());
+                            rootRef.child("filters").child("courses").child(coursearray[courselist.get(i)]).child(id).child("latitude").setValue(getUserLat());
+                            rootRef.child("filters").child("courses").child(coursearray[courselist.get(i)]).child(id).child("longitude").setValue(getUserLong());
                         }
                         courseSelected.setText(item);
                     }
@@ -484,7 +486,7 @@ public class FilterActivity extends AppCompatActivity {
 
     }
 
-    public String getUserLat(){
+    public Double getUserLat(){
 
         //sharedPref  = this.getSharedPreferences(getString(R.string.user_log_status_file), Context.MODE_PRIVATE);
        // sharedPref2 = this.getSharedPreferences("location", Context.MODE_PRIVATE);
@@ -492,19 +494,17 @@ public class FilterActivity extends AppCompatActivity {
        // String id = sharedPref.getString(getString(R.string.user_fb_id),"hej");
        // String name = sharedPref.getString(getString(R.string.user_name),"Name");
 
-        String uid = sharedPref.getString(getString(R.string.user_name), "hej");
-        String location = sharedPref.getString("location", "nope");
+        String stringLatitude = sharedPref.getString(getString(R.string.latitude), "location_not_found");
+        Double doubleLatitude = Double.parseDouble(stringLatitude);
 
-        //String teststring = name;
 
-        //mPref = this.getSharedPreferences(, "hej");
-
-        return location;
+        return doubleLatitude;
     }
 
-    public String getUserLong(){
-
-        return "longitude";
+    public Double getUserLong(){
+        String stringLongitude = sharedPref.getString(getString(R.string.longitude), "location_not_found");
+        Double doubleLongitude = Double.parseDouble(stringLongitude);
+        return doubleLongitude;
     }
 
 
