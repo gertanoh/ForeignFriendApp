@@ -423,12 +423,12 @@ public class FilterActivity extends AppCompatActivity {
                         coursemap.put("AC0002", null);
 
                         // Clear old subscriptions
-                        rootRef.child("_filters").child("courses").child("ID2216").child(id).removeValue();
-                        rootRef.child("_filters").child("courses").child("IS1200").child(id).removeValue();
-                        rootRef.child("_filters").child("courses").child("HE1208").child(id).removeValue();
-                        rootRef.child("_filters").child("courses").child("SK1101").child(id).removeValue();
-                        rootRef.child("_filters").child("courses").child("AD001").child(id).removeValue();
-                        rootRef.child("_filters").child("courses").child("AC0002").child(id).removeValue();
+                        rootRef.child("filters").child("courses").child("ID2216").child(id).removeValue();
+                        rootRef.child("filters").child("courses").child("IS1200").child(id).removeValue();
+                        rootRef.child("filters").child("courses").child("HE1208").child(id).removeValue();
+                        rootRef.child("filters").child("courses").child("SK1101").child(id).removeValue();
+                        rootRef.child("filters").child("courses").child("AD001").child(id).removeValue();
+                        rootRef.child("filters").child("courses").child("AC0002").child(id).removeValue();
 
                         //rootRef.child("_filters").child("courses").child(coursearray[courselist.get(i)]).child(id).child("test").setValue(1);
 

@@ -1,5 +1,6 @@
 package com.group11.kth.foreignfriend;
 
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,6 +12,7 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Looper;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -38,8 +40,18 @@ import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.cast.Cast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.PendingResult;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.games.multiplayer.turnbased.TurnBasedMultiplayer;
+import com.google.android.gms.location.FusedLocationProviderApi;
+import com.google.android.gms.location.LocationAvailability;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationListener;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.LocationSettingsRequest;
+import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -75,7 +87,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-//import  com.google.android.gms.location.LocationListener;
+
 import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 
@@ -88,22 +100,20 @@ import java.util.List;
 import java.util.Map;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener,
-        GoogleMap.OnMarkerClickListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+        GoogleMap.OnMarkerClickListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener, FusedLocationProviderApi {
 
     public GoogleMap mMap;
 
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
 
-    /* List<String> coursearray = Arrays.asList(getResources().getStringArray(R.array.courses);
-     List<String> fieldsarray = Arrays.asList(getResources().getStringArray(R.array.fields));*/
-    /*List<String> coursearray = new ArrayList<String>(Arrays.asList("ID001","ID002","ID003","ID004","ID005"));
-    List<String> fieldsarray = new ArrayList<String>(Arrays.asList("IT","Math","Physics"));*/
-    List<String> coursearray = new ArrayList<String>(Arrays.asList("ID001", "ID002"));
-    List<String> fieldsarray = new ArrayList<String>(Arrays.asList("Physics"));
+
+    List<String> coursearray = new ArrayList<String>(); //Arrays.asList("ID001", "ID002"));
+    List<String> fieldsarray = new ArrayList<String>(); //Arrays.asList("Physics"));
 
     private GoogleApiClient client;
     private LocationManager locationManager;
+    private LocationRequest locationRequest;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     HashMap<String, Marker> existingMarkers = new HashMap<String, Marker>();
     // Update userid to real Facebook user id
@@ -113,10 +123,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private static final long MIN_TIME = 400;
     private static final float MIN_DISTANCE = 5;
 
-    public GoogleApiClient mGoogleApiClient; //locationClient
 
     DatabaseReference userRef;
     DatabaseReference filtersRef = database.getReference("filters/");
+    DatabaseReference locationsRef = database.getReference("location/");
 
     SharedPreferences mPrefs;
 
@@ -139,11 +149,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+        client = new GoogleApiClient.Builder(this).addApi(LocationServices.API).addConnectionCallbacks(this).addOnConnectionFailedListener(this).build();
         client.connect();
         //Saving location locally to use between activities
         mPrefs = this.getSharedPreferences(getString(R.string.user_log_status_file), Context.MODE_PRIVATE);
-
 
         //Bottom navigation View
         findViewById(R.id.filter).setOnClickListener((View.OnClickListener) this);
@@ -171,7 +180,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
-      /*  if (mGoogleApiClient == null) {
+       /* if (mGoogleApiClient == null) {
             mGoogleApiClient = new GoogleApiClient.Builder(this)
                     .addConnectionCallbacks(this)
                     .addOnConnectionFailedListener(this)
@@ -227,58 +236,34 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         //.....................................................
 
-/*
-        LatLng student1 = new LatLng(59.346098, 18.072738);
-        LatLng student2 = new LatLng(59.347970, 18.068914);
-        LatLng student3 = new LatLng(59.349006, 18.074619);
-        LatLng student4 = new LatLng(59.346477, 18.076880);*/
-
-
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
-                ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            mMap.setMyLocationEnabled(true);
-
-        } else {
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION},
-                    MY_PERMISSIONS_REQUEST_LOCATION);
-
-         //   Toast.makeText(this, "Location not working", Toast.LENGTH_LONG).show();
-            Log.d("Location :", "Location not working ");
-        }
-
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
 
 
-        android.location.LocationListener ll = new android.location.LocationListener() {
-            @Override
-            public void onLocationChanged(Location location) {
-                LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-                CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 16);
-                mMap.animateCamera(cameraUpdate);
-                updateLocation(latLng);
-                //Toast.makeText(MapsActivity.this, latLng.toString(), Toast.LENGTH_SHORT).show();
+        locationRequest = LocationRequest.create()
+                .setInterval(500) // every second
+                .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        //locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder();
+        PendingResult<LocationSettingsResult> result =
+                LocationServices.SettingsApi.checkLocationSettings(client,
+                        builder.build());
 
-            }
 
-            @Override
-            public void onStatusChanged(String provider, int status, Bundle extras) {
-            }
 
-            @Override
-            public void onProviderEnabled(String provider) {
-            }
 
-            @Override
-            public void onProviderDisabled(String provider) {
-            }
+/*
+/       Location last_location= locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
-        };
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME, MIN_DISTANCE, ll);
+        CameraUpdate cam = CameraUpdateFactory.newLatLngZoom(new LatLng(last_location.getLatitude(),last_location.getLongitude()), 16);
+        mMap.animateCamera(cam);
+        SharedPreferences.Editor editor = mPrefs.edit();
+        editor.putString(getString(R.string.latitude), String.valueOf(last_location.getLatitude()));
+        editor.putString(getString(R.string.longitude), String.valueOf(last_location.getLongitude()));
+        editor.commit();
+*/
 
 
         //Create listeners to the locations in the filters I am subscribed to
@@ -306,7 +291,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                 Marker oldM = existingMarkers.get(dataSnapshot.getKey());
                 //MarkerOptions replaceMarker = new MarkerOptions().position(parseLatLng(dataSnapshot)).title(dataSnapshot.getKey()).snippet(dataSnapshot.getValue().toString());
-              //  Toast.makeText(MapsActivity.this, dataSnapshot.getKey() + dataSnapshot.toString(), Toast.LENGTH_LONG).show();
+                //  Toast.makeText(MapsActivity.this, dataSnapshot.getKey() + dataSnapshot.toString(), Toast.LENGTH_LONG).show();
                 oldM.setPosition(parseLatLng(dataSnapshot));
                 //Marker newM = mMap.addMarker(replaceMarker);
                 //oldM.remove();
@@ -337,10 +322,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         ChildEventListener my_own_filters_listener = new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                if (dataSnapshot.getRef().getParent().getKey()=="courses"){
+                if (dataSnapshot.getRef().getParent().getKey() == "courses") {
                     coursearray.add(dataSnapshot.getKey());
-                }
-                else if (dataSnapshot.getRef().getParent().getKey()=="fields"){
+                } else if (dataSnapshot.getRef().getParent().getKey() == "fields") {
                     fieldsarray.add(dataSnapshot.getKey());
                 }
                 String path = dataSnapshot.getRef().getParent().getKey() + "/" + dataSnapshot.getValue(); //[course-field]/name
@@ -349,10 +333,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.getRef().getParent().getKey()=="courses"){
+                if (dataSnapshot.getRef().getParent().getKey() == "courses") {
                     coursearray.remove(dataSnapshot.getKey());
-                }
-                else if (dataSnapshot.getRef().getParent().getKey()=="fields"){
+                } else if (dataSnapshot.getRef().getParent().getKey() == "fields") {
                     fieldsarray.remove(dataSnapshot.getKey());
                 }
                 String path = dataSnapshot.getRef().getParent().getKey() + "/" + dataSnapshot.getValue(); //[course-field]/name
@@ -371,6 +354,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             public void onCancelled(DatabaseError databaseError) {
             }
         };
+
 
         //Downloads and plots the info of all the current users in a course
 
@@ -404,6 +388,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             }
         };
+        ValueEventListener downloadFilters = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getRef().getParent().getKey() == "courses") {
+                    coursearray.add(dataSnapshot.getKey());
+                } else if (dataSnapshot.getRef().getParent().getKey() == "fields") {
+                    fieldsarray.add(dataSnapshot.getKey());
+                }
+                String path = dataSnapshot.getRef().getParent().getKey() + "/" + dataSnapshot.getValue(); //[course-field]/name
+                filtersRef.child(path).addChildEventListener(filterListener);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+      /*  //adds courses and filters from the database to the arrays
+        userRef.child("filters/courses").addListenerForSingleValueEvent(downloadFilters);
+        userRef.child("filters/fields").addListenerForSingleValueEvent(downloadFilters);
 
         Log.e("existingMarkers before", existingMarkers.toString());
         //creates a listener to every course and field in which one is subscribed
@@ -417,13 +421,34 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             filtersRef.child("fields").child(field).addChildEventListener(filterListener);
         }
         userRef.child("filters/courses").addChildEventListener(my_own_filters_listener);
-        userRef.child("filters/fields").addChildEventListener(my_own_filters_listener);
+        userRef.child("filters/fields").addChildEventListener(my_own_filters_listener);*/
 
+        locationsRef.addChildEventListener(filterListener);
 
     }
 
+
+    protected void startLocationUpdates() {
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
+                ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            mMap.setMyLocationEnabled(true);
+
+        } else {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION},
+                    MY_PERMISSIONS_REQUEST_LOCATION);
+
+            //   Toast.makeText(this, "Location not working", Toast.LENGTH_LONG).show();
+            Log.d("Location :", "Location not working ");
+        }
+
+
+        LocationServices.FusedLocationApi.requestLocationUpdates(
+                client, locationRequest, this);
+    }
+
     public LatLng parseLatLng(DataSnapshot dataSnapShot) {
-        //String[] latlong = dataSnapShot.getValue().toString().split(",");
         Object o = dataSnapShot.child("latitude").getValue();
         Log.e("type of value", o.getClass().getName());
         double latitude = (double) dataSnapShot.child("latitude").getValue();
@@ -441,8 +466,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     public Action getIndexApiAction() {
         Thing object = new Thing.Builder()
-                .setName("Maps Page") // TODO: Define a title for the content shown.
-                // TODO: Make sure this auto-generated URL is correct.
+                .setName("Maps Page") //
+                //
                 .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
                 .build();
         return new Action.Builder(Action.TYPE_VIEW)
@@ -459,9 +484,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
 
-       // mGoogleApiClient.connect(); //location connected
+        // mGoogleApiClient.connect(); //location connected
         client.connect();
-        AppIndex.AppIndexApi.start(client, getIndexApiAction());
+        //   AppIndex.AppIndexApi.start(client, getIndexApiAction());
     }
 
     @Override
@@ -470,7 +495,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        AppIndex.AppIndexApi.end(client, getIndexApiAction());
+      //  AppIndex.AppIndexApi.end(client, getIndexApiAction());
         client.disconnect();
     }
 
@@ -492,18 +517,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     void updateLocation(LatLng latLng) {
 
         SharedPreferences.Editor editor = mPrefs.edit();
-        /*Gson gson = new Gson();
-        String json = gson.toJson(latLng);
-        editor.putString("location", json);*/
 
-       // Toast.makeText(this, "Update Location Toast", Toast.LENGTH_SHORT).show();
+
+        Toast.makeText(this, "Update Location Toast", Toast.LENGTH_SHORT).show();
         editor.putString(getString(R.string.latitude), String.valueOf(latLng.latitude));
         editor.putString(getString(R.string.longitude), String.valueOf(latLng.longitude));
-      //  Toast.makeText(this, "Location Update", Toast.LENGTH_LONG).show();
+        //  Toast.makeText(this, "Location Update", Toast.LENGTH_LONG).show();
         editor.commit();
 
 
-        userRef.child("location").setValue(latLng);
+        userRef.child("location/latitude").setValue(latLng.latitude);
+        userRef.child("location/longitude").setValue(latLng.longitude);
+        Map<String, Object> locationUpdates = new HashMap<String, Object>();
+        locationUpdates.put(userId,latLng);
+        locationsRef.updateChildren(locationUpdates);
 
         Map<String, Object> filterUpdates = new HashMap<String, Object>();
         for (String ftoAdd : fieldsarray) {
@@ -535,28 +562,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onConnected(@Nullable Bundle bundle) {
 
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+            return;
+        }
+        Location last_location = LocationServices.FusedLocationApi.getLastLocation(client);
+        if (last_location != null) {
+            CameraUpdate cam = CameraUpdateFactory.newLatLngZoom(new LatLng(last_location.getLatitude(),last_location.getLongitude()), 16);
+            mMap.animateCamera(cam);
+            SharedPreferences.Editor editor = mPrefs.edit();
+            editor.putString(getString(R.string.latitude), String.valueOf(last_location.getLatitude()));
+            editor.putString(getString(R.string.longitude), String.valueOf(last_location.getLongitude()));
+            editor.commit();
+
+        }
+
+        startLocationUpdates();
+
+
     }
 
-    /*  @Override
-        public void onConnected(@Nullable Bundle connectionHint) {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "permissions refused ", Toast.LENGTH_LONG).show();
-                return;
-            }
-            Location mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
-                    mGoogleApiClient);
-            if (mLastLocation != null) {
-                Double latitude = mLastLocation.getLatitude();
-                Double longitude = mLastLocation.getLongitude();
-                Toast.makeText(this, "Lattitude :"+ latitude, Toast.LENGTH_LONG).show();
-                Toast.makeText(this, "Lattitude :"+ longitude, Toast.LENGTH_LONG).show();
-                SharedPreferences.Editor editor = mPrefs.edit();
-                editor.putString(getString(R.string.latitude), String.valueOf(latitude));
-                editor.putString(getString(R.string.longitude), String.valueOf(longitude));
-                editor.commit();
-            }
-        }
-    */
     @Override
     public void onConnectionSuspended(int i) {
 
@@ -566,5 +591,74 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
       //  Toast.makeText(this, "Connection Failed", Toast.LENGTH_LONG).show();
 
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 16);
+        mMap.animateCamera(cameraUpdate);
+        updateLocation(latLng);
+        Toast.makeText(MapsActivity.this, "userID: " + userId , Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public Location getLastLocation(GoogleApiClient googleApiClient) {
+        return null;
+    }
+
+    @Override
+    public LocationAvailability getLocationAvailability(GoogleApiClient googleApiClient) {
+        return null;
+    }
+
+    @Override
+    public PendingResult<Status> requestLocationUpdates(GoogleApiClient googleApiClient, LocationRequest locationRequest, LocationListener locationListener) {
+        return null;
+    }
+
+    @Override
+    public PendingResult<Status> requestLocationUpdates(GoogleApiClient googleApiClient, LocationRequest locationRequest, LocationListener locationListener, Looper looper) {
+        return null;
+    }
+
+    @Override
+    public PendingResult<Status> requestLocationUpdates(GoogleApiClient googleApiClient, LocationRequest locationRequest, LocationCallback locationCallback, Looper looper) {
+        return null;
+    }
+
+    @Override
+    public PendingResult<Status> requestLocationUpdates(GoogleApiClient googleApiClient, LocationRequest locationRequest, PendingIntent pendingIntent) {
+        return null;
+    }
+
+    @Override
+    public PendingResult<Status> removeLocationUpdates(GoogleApiClient googleApiClient, LocationListener locationListener) {
+        return null;
+    }
+
+    @Override
+    public PendingResult<Status> removeLocationUpdates(GoogleApiClient googleApiClient, PendingIntent pendingIntent) {
+        return null;
+    }
+
+    @Override
+    public PendingResult<Status> removeLocationUpdates(GoogleApiClient googleApiClient, LocationCallback locationCallback) {
+        return null;
+    }
+
+    @Override
+    public PendingResult<Status> setMockMode(GoogleApiClient googleApiClient, boolean b) {
+        return null;
+    }
+
+    @Override
+    public PendingResult<Status> setMockLocation(GoogleApiClient googleApiClient, Location location) {
+        return null;
+    }
+
+    @Override
+    public PendingResult<Status> flushLocations(GoogleApiClient googleApiClient) {
+        return null;
     }
 }
