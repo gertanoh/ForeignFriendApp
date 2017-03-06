@@ -54,7 +54,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 .into(image);
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.bottomNavigationView);
-
+        //bottomNavigationView.inflateMenu();
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

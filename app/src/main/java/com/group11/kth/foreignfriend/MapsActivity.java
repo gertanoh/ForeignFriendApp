@@ -101,12 +101,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     HashMap<String,Marker> existingMarkers = new HashMap<String, Marker>();
     // Update userid to real Facebook user id
-    String userId = "juanluisrto";
+   // String userId = "juanluisrto";
+    String userId;
+    String name_user;
     private static final long MIN_TIME = 400;
     private static final float MIN_DISTANCE = 5;
 
 
-    DatabaseReference userRef = database.getReference("users/" + userId);
+    DatabaseReference userRef;
     DatabaseReference filtersRef = database.getReference("filters/");
 
      SharedPreferences  mPrefs;
@@ -116,9 +118,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        /* set user id*/
-       // userId = mPrefs.getString(getString(R.string.user_id),"null");
+        /* set real user id*/
+        mPrefs  = this.getSharedPreferences(getString(R.string.user_log_status_file), Context.MODE_PRIVATE);
 
+        userId = mPrefs.getString(getString(R.string.user_id),"null");
+        userRef = database.getReference(getString(R.string.Users)+"/" + userId);
+        /* get name */
+        name_user = mPrefs.getString(getString(R.string.Name),"null");
         setContentView(R.layout.activity_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -275,11 +281,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 if (existingMarkers.containsKey(dataSnapshot.getKey())) {
                     Marker existingMarker = existingMarkers.get(dataSnapshot.getKey());
                     existingMarker.setPosition(parseLatLng(dataSnapshot));
+                    existingMarker.setTag(dataSnapshot.getKey());
+
                 } else {
+
                     Marker newMarker = mMap.addMarker(new MarkerOptions()
                             .position(parseLatLng(dataSnapshot))
-                            .title(dataSnapshot.getKey())
-                            .snippet(dataSnapshot.getValue().toString()));
+                            .title((String) dataSnapshot.child(getString(R.string.Name)).getValue()));
+                            //.snippet(dataSnapshot.getValue().toString()));
+                    newMarker.setTag(dataSnapshot.getKey());
                     existingMarkers.put(dataSnapshot.getKey(), newMarker);
                 }
             }
@@ -355,11 +365,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                       Log.e("thisMarkerkey",existingMarkers.get(child.getKey()).toString());
                       Marker existingMarker = existingMarkers.get(child.getKey());
                       existingMarker.setPosition(parseLatLng(child));
+                      existingMarker.setTag(child.getKey());
                   } else {
                       Marker newMarker = mMap.addMarker(new MarkerOptions()
                               .position(parseLatLng(child))
-                              .title(child.getKey())
-                              .snippet(child.getValue().toString()));
+                              .title((String) child.child(getString(R.string.Name)).getValue()));
+                      newMarker.setTag(child.getKey());
+                              //.snippet(child.getValue().toString()));
                       existingMarkers.put(child.getKey(), newMarker);
                       Log.e("newMarker",newMarker.getTitle() + newMarker.getPosition().toString());
                   }
@@ -494,14 +506,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public boolean onMarkerClick(Marker marker) {
         // to be detailed
         Intent intent = new Intent(this, StudentOnlineActivity.class);
-<<<<<<< HEAD
-        //startActivity(intent);
-=======
         // send userId
-        String userId = "10154392139174033";
-        intent.putExtra(getString(R.string.student_online_id),userId);
+
+        String studentId = (String) marker.getTag();//"10154392139174033";
+        Log.d("tag",studentId);
+        intent.putExtra(getString(R.string.student_online_id),studentId);
         startActivity(intent);
->>>>>>> origin/master
         return false;
     }
 
