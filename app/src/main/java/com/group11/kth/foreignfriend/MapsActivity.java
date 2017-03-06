@@ -336,12 +336,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         ChildEventListener my_own_filters_listener = new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                if (dataSnapshot.getRef().getParent().getKey()=="courses"){
+                    coursearray.add(dataSnapshot.getKey());
+                }
+                else if (dataSnapshot.getRef().getParent().getKey()=="fields"){
+                    fieldsarray.add(dataSnapshot.getKey());
+                }
                 String path = dataSnapshot.getRef().getParent().getKey() + "/" + dataSnapshot.getValue(); //[course-field]/name
                 filtersRef.child(path).addChildEventListener(filterListener);
             }
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getRef().getParent().getKey()=="courses"){
+                    coursearray.remove(dataSnapshot.getKey());
+                }
+                else if (dataSnapshot.getRef().getParent().getKey()=="fields"){
+                    fieldsarray.remove(dataSnapshot.getKey());
+                }
                 String path = dataSnapshot.getRef().getParent().getKey() + "/" + dataSnapshot.getValue(); //[course-field]/name
                 filtersRef.child(path).removeEventListener(filterListener);
             }
@@ -403,8 +415,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             filtersRef.child("fields").child(field).addListenerForSingleValueEvent(downloadMarkers); //downloads the locations of all the current users in a field
             filtersRef.child("fields").child(field).addChildEventListener(filterListener);
         }
-        //userRef.child("filters/courses").addChildEventListener(my_own_filters_listener);
-        //userRef.child("filters/fields").addChildEventListener(my_own_filters_listener);
+        userRef.child("filters/courses").addChildEventListener(my_own_filters_listener);
+        userRef.child("filters/fields").addChildEventListener(my_own_filters_listener);
 
 
     }
